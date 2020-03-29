@@ -1,0 +1,18 @@
+.menu-container {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+}
+
+.menu-container li {
+  margin: 0 15px 2px;
+  font-size: 0.9rem;
+}
+/*# sourceMappingURL=Menu.css.map */

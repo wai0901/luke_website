@@ -1,0 +1,17 @@
+.shop-container {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+}
+
+.shop-container li {
+  margin: 0 0 2px 15px;
+}
+/*# sourceMappingURL=ShopModule.css.map */

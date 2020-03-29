@@ -1,0 +1,14 @@
+@mixin margin-padding-zero {
+    margin: 0;
+    padding: 0;
+}
+
+.shop-container {
+    @include margin-padding-zero;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    li {
+        margin: 0 0 2px 15px;
+    }
+}

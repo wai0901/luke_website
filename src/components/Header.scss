@@ -1,0 +1,17 @@
+.header-container {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    align-items: flex-end;
+    .logo {
+        margin-bottom: 15PX;
+    }
+    .menu {
+        margin-bottom: 15PX;
+        justify-self: center;
+    }
+    .shop {
+        margin-bottom: 10PX;
+        justify-self: end;
+    }
+}

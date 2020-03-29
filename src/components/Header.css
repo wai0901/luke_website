@@ -1,0 +1,27 @@
+.header-container {
+  width: 90%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 5fr 1fr;
+      grid-template-columns: 1fr 5fr 1fr;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.header-container .logo {
+  margin-bottom: 15PX;
+}
+
+.header-container .menu {
+  margin-bottom: 15PX;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.header-container .shop {
+  margin-bottom: 10PX;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+/*# sourceMappingURL=Header.css.map */

@@ -1,0 +1,15 @@
+@mixin margin-padding-zero {
+    margin: 0;
+    padding: 0;
+}
+
+.menu-container {
+    @include margin-padding-zero;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    li {
+        margin: 0 15px 2px;
+        font-size: 0.9rem;
+    }
+}
