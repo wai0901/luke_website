@@ -34,40 +34,7 @@ $containerColor: #E5E5E5;
         grid-template-rows: 80px auto 144px;
         background-color: $containerColor;
         justify-items: center;
-        .body-container {
-            height: 80vh;
-            width: 90%;
-            background-color: #eee;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            div {
-                height: 260px;
-                background: url("../images/2585202620_2_1_1.jpg") no-repeat center center;
-                @include background-cover;
-            }
-            .one {
-                height: 520px;
-                background: url("../images/2585202620_2_1_1.jpg") no-repeat center center;
-                @include background-cover;
-                grid-column: 1 / 3;
-                grid-row: 1 / 3;
-            }
-           
-            
-            // div {
-            //     height: 260px;
-            //     // width: 260px;
-            //     background: url("../images/2585202620_2_1_1.jpg") no-repeat center center;
-            //     @include background-cover;
-               
-            // }
-            // .one {
-            //     height: 520px;
-            //     background: url("../images/2585202620_2_1_1.jpg") no-repeat auto center;
-            // }
-            
-        }
+        
     }
 }
 

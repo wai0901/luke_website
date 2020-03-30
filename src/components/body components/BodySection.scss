@@ -1,0 +1,109 @@
+@mixin background-cover {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+@mixin margin-padding-zero {
+    margin: 0;
+    padding: 0;
+}
+.body-container {
+    height: 78vh;
+    width: 90%;
+    background-color: #eee;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr); 
+    @include margin-padding-zero;
+
+    // Routes selection
+    .normal {
+        height: 260px;
+        .selection-container {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+            cursor: pointer;
+            
+            .menu-info {
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                left: 100%;
+                text-align: center;
+                background-color: rgba($color: #fff, $alpha: 0.8);
+                opacity: 0;
+                transition: 0.3s ease-in-out;
+                h1, p {
+                    @include margin-padding-zero;
+                    text-transform: uppercase;
+                    line-height: 2rem;
+                    
+                }
+                h1 {
+                    margin-top: 30%;
+                    font-size: 2rem;
+                }
+                p {
+                    font-size: 1rem;
+                }
+            }
+            .menu-title {
+                position: absolute;
+                left: 8%;
+                bottom: 8%;
+                opacity: 1;
+                transition: 0.3s ease-in-out;
+                h1 {
+                    @include margin-padding-zero;
+                    font-size: 1.1rem;
+                    text-transform: uppercase;
+                    color: rgba($color: #000, $alpha: 0.5);
+                }
+            }
+        }
+
+        // hover effect
+        .selection-container:hover {
+            .menu-info {
+                left: 0%;
+                opacity: 1;
+            }
+            .menu-title {
+                opacity: 0;
+            }
+        }
+
+        
+    }
+    // Sales Route
+    .sales {
+        height: 520px;
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+        .sales-container {
+            position: relative;
+            height: 100%;
+            .sales-info {
+                position: absolute;
+                left: 5%;
+                bottom: 4%;
+                h1, p {
+                    @include margin-padding-zero;
+                    color: #fff;
+                    text-transform: uppercase;
+                    line-height: 5rem;
+                    
+                }
+                h1 {
+                    font-size: 7rem;
+                }
+                p {
+                    font-size: 3rem;
+                }
+            }
+        }
+    } 
+}
+    

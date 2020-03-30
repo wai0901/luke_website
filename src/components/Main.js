@@ -2,26 +2,25 @@ import React, { Component } from 'react';
 import { Switch, Route, Redirect } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import BodySection from './body components/BodySection';
+import { HOMESELECTION } from '../shared/homeSelection';
 import './Main.css';
 
+
 class Main extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            homeSelection: HOMESELECTION
+        };
+    }
 
     render () {
         return (
             <div className="bg">
                 <div className="container">
                     <Header />
-                    <div className="body-container">
-                        <div className="one"></div>
-                        <div className="two"></div>
-                        <div className="women"></div>
-                        <div className="men"></div>
-                        <div className="five"></div>
-                        <div className="six"></div>
-                        <div className="girl"></div>
-                        <div className="boy"></div>
-                        <div className="assc"></div>
-                    </div>
+                    <BodySection home={this.state.homeSelection}/>
                     <Footer />
                 </div>
             </div>
@@ -29,5 +28,6 @@ class Main extends Component {
         )
     }
 }
+
 
 export default Main;
