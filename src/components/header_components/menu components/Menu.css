@@ -12,7 +12,13 @@
 }
 
 .menu-container li {
-  margin: 0 15px 2px;
-  font-size: 0.9rem;
+  margin: 0 12px 2px;
+  font-size: 0.8rem;
+}
+
+.menu-container li .menuLink {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
 }
 /*# sourceMappingURL=Menu.css.map */

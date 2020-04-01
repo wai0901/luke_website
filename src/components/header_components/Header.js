@@ -1,7 +1,7 @@
 import React from "react";
-import Menu from "./header_components/Menu";
-import Logo from "./header_components/Logo";
-import ShopModule from "./header_components/ShopModule";
+import Menu from "./menu components/Menu";
+import Logo from "./Logo";
+import ShopModule from "./shop components/ShopModule";
 import './Header.css';
 
 

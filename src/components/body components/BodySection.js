@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+
 import './BodySection.css';
 
 const BodySection = (props) => {
@@ -13,16 +16,19 @@ const BodySection = (props) => {
                     }  
                     if (select.name === "sales") {
                         return <div key={select.id} style={selection} className={select.style}>
+                            <Link to="/sales">
                                 <div className="sales-container">
                                     <div className="sales-info">
                                         <h1>{select.title}</h1>
                                         <p>{select.description}</p>
                                     </div>
                                 </div>
-                            </div>;
+                            </Link>
+                        </div>
                     } else {
                         return <div key={select.id} style={selection} className={select.style}>
-                            <div className="selection-container">
+                            <Link to={"/" + select.link}>
+                                <div className="selection-container">
                                     <div className="menu-info">
                                         <h1>{select.title}</h1>
                                         <p>{select.description}</p>
@@ -31,10 +37,11 @@ const BodySection = (props) => {
                                         <h1>{select.title}</h1>
                                     </div>
                                 </div>
-                            </div>;
+                            </Link>
+                        </div>
                     }
                 })
-            }
+            }   
         </div> 
     )
 }

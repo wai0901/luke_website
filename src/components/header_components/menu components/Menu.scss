@@ -9,7 +9,12 @@
     flex-direction: row;
     list-style: none;
     li {
-        margin: 0 15px 2px;
-        font-size: 0.9rem;
+        margin: 0 12px 2px;
+        font-size: 0.8rem;
+        .menuLink {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #000;
+        }
     }
 }
