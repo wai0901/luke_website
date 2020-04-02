@@ -11,8 +11,7 @@ const SelectedCat = (props) => {
             // check if the object has id, to avoid loading the "category" in the dataList
             if (select.id) {
                 const selection = {
-                background: "url(" + select.image + ")" + "no-repeat center 40%",
-                backgroundSize: "cover"
+                background: "url(" + select.image + ")" + "no-repeat center 40% / cover"   
             }  
                 return <div key={select.id} style={selection} className={select.style}>
                     <Link to={"/" + select.link}>

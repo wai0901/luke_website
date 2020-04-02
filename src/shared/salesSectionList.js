@@ -1,25 +1,25 @@
-export const WOMENSECTIONLIST = [
+export const SALESSECTIONLIST = [
     {
-        category: "women"
+        category: "sales"
     },
     {
         id: 1,
         name: "best sellers",
-        image: "https://static.zara.net/photos///2020/V/0/1/p/3564/062/330/2/w/1143/3564062330_2_1_1.jpg?ts=1583932532120",
+        image: "https://static.zara.net/photos///2020/V/0/1/p/3519/012/615/72/w/1782/3519012615_1_1_1.jpg?ts=1585229011992",
         link: "best-sellers",
         switch: false,
         style: "normal",
-        title: "best sellers",
+        title: "ribbed cropped jacket",
         description: "collection"
     },
     {
         id: 2,
         name: "loungewear",
-        image: "https://static.zara.net/photos///2020/V/0/1/p/2650/105/737/2/w/1143/2650105737_1_1_1.jpg?ts=1583399237386",
+        image: "https://static.zara.net/photos///2020/V/0/1/p/2580/663/098/2/w/1782/2580663098_1_1_1.jpg?ts=1583829034819",
         link: "loungewear",
         switch: false,
         style: "normal",
-        title: "loungewear",
+        title: "printed pajama top",
         description: "collection"
     },
     {
