@@ -8,14 +8,17 @@
     margin: 0;
     padding: 0;
 }
+
 .body-container {
+    margin: 0 auto;
     height: 78vh;
     width: 90%;
     background-color: #eee;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr); 
-    @include margin-padding-zero;
+    transition: 500ms ease-in-out;
+    // @include margin-padding-zero;
 
     // Sales Route
     .sales {
@@ -34,7 +37,6 @@
                     color: #fff;
                     text-transform: uppercase;
                     line-height: 5rem;
-                    
                 }
                 h1 {
                     font-size: 7rem;
@@ -45,7 +47,6 @@
             }
         }
     } 
-
     // Routes selection
     .normal {
         height: 260px;
@@ -54,7 +55,6 @@
             height: 100%;
             overflow: hidden;
             // cursor: pointer;
-            
             .menu-info {
                 height: 100%;
                 width: 100%;
@@ -69,7 +69,6 @@
                     text-transform: uppercase;
                     line-height: 2rem;
                     color: #000;
-                    
                 }
                 h1 {
                     margin-top: 30%;
@@ -93,7 +92,6 @@
                 }
             }
         }
-
         // hover effect
         .selection-container:hover {
             .menu-info {
@@ -104,8 +102,9 @@
                 opacity: 0;
             }
         }
-
-        
     }
+    
 }
+
+
     

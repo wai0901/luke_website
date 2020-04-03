@@ -1,8 +1,9 @@
 export const HOMEMENULIST = [
     {
-        id: 1,
+        id: "h1",
         name: "sales",
-        image: "https://static.zara.net/photos///2020/V/0/1/p/2585/202/620/2/w/1143/2585202620_2_1_1.jpg?ts=1583400464684",
+        image: "https://cdn.pixabay.com/photo/2017/04/05/10/45/girl-2204623_960_720.jpg",
+        position: "50%",
         link: "sales",
         switch: false,
         style: "sales",
@@ -10,9 +11,10 @@ export const HOMEMENULIST = [
         description: "entire site"
     },
     {
-        id: 2,
+        id: "h2",
         name: "women",
-        image: "https://static.zara.net/photos///2020/V/0/1/p/2049/144/064/2/w/1143/2049144064_1_1_1.jpg?ts=1581009438550",
+        image: "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623086_960_720.jpg",
+        position: "40%",
         link: "women",
         switch: false,
         style: "normal",
@@ -20,9 +22,10 @@ export const HOMEMENULIST = [
         description: "collection"
     },
     {
-        id: 3,
+        id: "h3",
         name: "men",
-        image: "https://static.zara.net/photos///2020/V/0/2/p/6518/400/401/2/w/1143/6518400401_1_1_1.jpg?ts=1577383051646",
+        image: "https://cdn.pixabay.com/photo/2017/09/11/05/32/suit-2737911_960_720.jpg",
+        position: "60%",
         link: "men",
         switch: false,
         style: "normal",
@@ -30,9 +33,10 @@ export const HOMEMENULIST = [
         description: "collection"
     },
     {
-        id: 4,
+        id: "h4",
         name: "girl",
-        image: "https://static.zara.net/photos///2020/V/0/3/p/0517/610/406/104/w/1143/0517610406_2_11_1.jpg?ts=1582115598855",
+        image: "https://cdn.pixabay.com/photo/2017/12/13/09/23/model-3016384_960_720.jpg",
+        position: "30%",
         link: "girl",
         switch: false,
         style: "normal",
@@ -40,9 +44,10 @@ export const HOMEMENULIST = [
         description: "6 - 14 years"
     },
     {
-        id: 5,
+        id: "h5",
         name: "boy",
-        image: "https://static.zara.net/photos///2020/V/0/3/p/5992/706/707/352/w/1143/5992706707_2_10_1.jpg?ts=1582565658723",
+        image: "https://cdn.pixabay.com/photo/2018/07/30/16/07/football-3572907_960_720.jpg",
+        position: "50%",
         link: "boy",
         switch: false,
         style: "normal",
@@ -50,9 +55,10 @@ export const HOMEMENULIST = [
         description: "6 - 14 years"
     },
     {
-        id: 6,
+        id: "h6",
         name: "mini",
-        image: "https://static.zara.net/photos///2020/V/0/3/p/1078/208/920/52/w/1143/1078208920_2_10_1.jpg?ts=1582118111479",
+        image: "https://cdn.pixabay.com/photo/2015/07/28/22/57/baby-865229_960_720.jpg",
+        position: "50%",
         link: "mini",
         switch: false,
         style: "normal",
@@ -60,9 +66,10 @@ export const HOMEMENULIST = [
         description: "0 - 12 months"
     },
     {
-        id: 7,
+        id: "h7",
         name: "accessories",
         image: "https://static.zara.net/photos///2020/V/0/3/p/0653/549/620/2/w/1143/0653549620_1_1_1.jpg?ts=1580314198540",
+        position: "70%",
         link: "accessories",
         switch: false,
         style: "normal",
@@ -70,9 +77,10 @@ export const HOMEMENULIST = [
         description: "baby accessories"
     },
     {
-        id: 8,
+        id: "h8",
         name: "baby girl",
-        image: "https://static.zara.net/photos///2020/V/0/3/p/1236/415/400/202/w/1143/1236415400_2_10_1.jpg?ts=1584103185986",
+        image: "https://cdn.pixabay.com/photo/2015/07/27/18/52/mom-863055_960_720.jpg",
+        position: "50%",
         link: "baby-girl",
         switch: false,
         style: "normal",
@@ -80,9 +88,10 @@ export const HOMEMENULIST = [
         description: "5 months - 5 years"
     },
     {
-        id: 9,
+        id: "h9",
         name: "baby boy",
-        image: "https://static.zara.net/photos///2020/V/0/3/p/6061/532/712/402/w/1143/6061532712_2_10_1.jpg?ts=1584099041560",
+        image: "https://cdn.pixabay.com/photo/2019/09/03/01/51/boy-4448370_960_720.jpg",
+        position: "50%",
         link: "baby-boy",
         switch: false,
         style: "normal",

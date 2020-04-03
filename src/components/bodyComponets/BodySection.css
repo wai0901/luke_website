@@ -1,4 +1,5 @@
 .body-container {
+  margin: 0 auto;
   height: 78vh;
   width: 90%;
   background-color: #eee;
@@ -8,8 +9,8 @@
       grid-template-columns: repeat(4, 1fr);
   -ms-grid-rows: (1fr)[3];
       grid-template-rows: repeat(3, 1fr);
-  margin: 0;
-  padding: 0;
+  -webkit-transition: 500ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
 .body-container .sales {

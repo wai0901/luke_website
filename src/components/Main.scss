@@ -33,8 +33,25 @@ $containerColor: #E5E5E5;
         display: grid;
         grid-template-rows: 80px auto 144px;
         background-color: $containerColor;
-        justify-items: center;
-        
+        justify-items: center;  
+        // .shell {
+        //     position: relative;
+        //     width: 100%;
+        // }
     }
 }
-
+.slide-appear, .slide-enter {
+    opacity: 0;
+    z-index: 1;
+}
+.slide-appear-active, .slide-enter .slide-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+.slide-exit {
+    opacity: 1;
+}
+.slide-exit.slide-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ease-out;
+}

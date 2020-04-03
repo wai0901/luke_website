@@ -5,7 +5,6 @@ import './Menu.css';
 function Menu() {
     return(
         <ul className="menu-container">
-            <li><Link to="/sales" className="menuLink">sales</Link></li>
             <li><Link to="/women" className="menuLink">women</Link></li>
             <li><Link to="/men" className="menuLink">men</Link></li>
             <li><Link to="/girl" className="menuLink">girl</Link></li>

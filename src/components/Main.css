@@ -22,4 +22,25 @@
   background-color: #E5E5E5;
   justify-items: center;
 }
+
+.slide-appear, .slide-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.slide-appear-active, .slide-enter .slide-enter-active {
+  opacity: 1;
+  -webkit-transition: opacity 300ms ease-in;
+  transition: opacity 300ms ease-in;
+}
+
+.slide-exit {
+  opacity: 1;
+}
+
+.slide-exit.slide-exit-active {
+  opacity: 0;
+  -webkit-transition: opacity 300ms ease-out;
+  transition: opacity 300ms ease-out;
+}
 /*# sourceMappingURL=Main.css.map */

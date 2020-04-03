@@ -3,29 +3,35 @@ export const WOMENSECTIONLIST = [
         category: "women"
     },
     {
-        id: 1,
+        id: "w1",
+        category: "women",
         name: "best sellers",
-        image: "https://static.zara.net/photos///2020/V/0/1/p/3564/062/330/2/w/1143/3564062330_2_1_1.jpg?ts=1583932532120",
-        link: "best-sellers",
+        image: "https://cdn.pixabay.com/photo/2016/10/27/02/06/model-1773191_960_720.jpg",
+        position: "50%",
+        link: "women-best-sellers",
         switch: false,
         style: "normal",
         title: "best sellers",
         description: "collection"
     },
     {
-        id: 2,
+        id: "w2",
+        category: "women",
         name: "loungewear",
-        image: "https://static.zara.net/photos///2020/V/0/1/p/2650/105/737/2/w/1143/2650105737_1_1_1.jpg?ts=1583399237386",
-        link: "loungewear",
+        image: "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623086_960_720.jpg",
+        position: "50%",
+        link: "women-loungewear",
         switch: false,
         style: "normal",
         title: "loungewear",
         description: "collection"
     },
     {
-        id: 3,
+        id: "w3",
+        category: "women",
         name: "blazers",
-        image: "https://static.zara.net/photos///2020/V/0/1/p/2596/474/400/2/w/1143/2596474400_1_1_1.jpg?ts=1583863669783",
+        image: "https://cdn.pixabay.com/photo/2016/07/28/10/40/sunglasses-1547492_960_720.jpg",
+        position: "50%",
         link: "blazers",
         switch: false,
         style: "normal",
@@ -33,9 +39,11 @@ export const WOMENSECTIONLIST = [
         description: "collection"
     },
     {
-        id: 4,
+        id: "w4",
+        category: "women",
         name: "coats",
-        image: "https://static.zara.net/photos///2019/I/0/1/p/7872/003/710/3/w/1143/7872003710_1_1_1.jpg?ts=1565336933760",
+        image: "https://cdn.pixabay.com/photo/2017/04/05/10/45/girl-2204623_960_720.jpg",
+        position: "50%",
         link: "coats",
         switch: false,
         style: "normal",
@@ -43,9 +51,11 @@ export const WOMENSECTIONLIST = [
         description: "collection"
     },
     {
-        id: 5,
+        id: "w5",
+        category: "women",
         name: "dresses",
-        image: "https://static.zara.net/photos///2020/V/T/1/p/9479/065/629/2/w/956/9479065629_1_1_1.jpg?ts=1584106905132",
+        image: "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623086_960_720.jpg",
+        position: "50%",
         link: "dresses",
         switch: false,
         style: "normal",
@@ -53,9 +63,11 @@ export const WOMENSECTIONLIST = [
         description: "collection"
     },
     {
-        id: 6,
+        id: "w6",
+        category: "women",
         name: "t-shirts",
-        image: "https://static.zara.net/photos///2020/V/0/1/p/0264/731/933/2/w/1143/0264731933_1_1_1.jpg?ts=1584519627660",
+        image: "https://cdn.pixabay.com/photo/2017/04/05/10/45/girl-2204623_960_720.jpg",
+        position: "50%",
         link: "t-shirts",
         switch: false,
         style: "normal",
@@ -63,9 +75,11 @@ export const WOMENSECTIONLIST = [
         description: "collection"
     },
     {
-        id: 7,
+        id: "w7",
+        category: "women",
         name: "knitwear",
-        image: "https://static.zara.net/photos///2020/V/0/1/p/9667/004/712/72/w/1143/9667004712_1_1_1.jpg?ts=1579708583468",
+        image: "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623088_960_720.jpg",
+        position: "50%",
         link: "knitwear",
         switch: false,
         style: "normal",
@@ -73,9 +87,11 @@ export const WOMENSECTIONLIST = [
         description: "collection"
     },
     {
-        id: 8,
+        id: "w8",
+        category: "women",
         name: "pants",
-        image: "https://static.zara.net/photos///2020/V/0/1/p/2698/374/712/3/w/1143/2698374712_1_1_1.jpg?ts=1583495646838",
+        image: "https://cdn.pixabay.com/photo/2016/10/27/02/06/model-1773191_960_720.jpg",
+        position: "50%",
         link: "pants",
         switch: false,
         style: "normal",
@@ -83,9 +99,11 @@ export const WOMENSECTIONLIST = [
         description: "collection"
     },
     {
-        id: 9,
+        id: "w9",
+        category: "women",
         name: "joggers",
-        image: "https://static.zara.net/photos///2020/V/0/1/p/5536/100/802/2/w/1143/5536100802_1_1_1.jpg?ts=1579082927728",
+        image: "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623088_960_720.jpg",
+        position: "50%",
         link: "joggers",
         switch: false,
         style: "normal",
@@ -93,9 +111,11 @@ export const WOMENSECTIONLIST = [
         description: "collection"
     },
     {
-        id: 10,
+        id: "w10",
+        category: "women",
         name: "jeans",
-        image: "https://static.zara.net/photos///2020/V/0/1/p/6147/059/427/2/w/1143/6147059427_1_1_1.jpg?ts=1581069084527",
+        image: "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623086_960_720.jpg",
+        position: "50%",
         link: "jeans",
         switch: false,
         style: "normal",
@@ -103,9 +123,11 @@ export const WOMENSECTIONLIST = [
         description: "collection"
     },
     {
-        id: 11,
+        id: "w11",
+        category: "women",
         name: "sweatshirt",
-        image: "https://static.zara.net/photos///2020/V/0/1/p/5039/180/711/2/w/1143/5039180711_1_1_1.jpg?ts=1583425089218",
+        image: "https://cdn.pixabay.com/photo/2016/10/27/02/06/model-1773191_960_720.jpg",
+        position: "50%",
         link: "sweatshirt",
         switch: false,
         style: "normal",
@@ -113,9 +135,11 @@ export const WOMENSECTIONLIST = [
         description: "collection"
     },
     {
-        id: 12,
+        id: "w12",
+        category: "women",
         name: "swimwear",
-        image: "https://static.zara.net/photos///2020/V/0/1/p/0594/012/800/2/w/1143/0594012800_1_1_1.jpg?ts=1584606748583",
+        image: "https://cdn.pixabay.com/photo/2017/04/05/10/45/girl-2204623_960_720.jpg",
+        position: "50%",
         link: "swimwear",
         switch: false,
         style: "normal",

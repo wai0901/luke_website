@@ -8,22 +8,21 @@ const BodySection = (props) => {
 
     return (
         <div className="body-container">
+            
             {
                 props.home.map(select => {
                     const selection = {
-                        background: "url(" + select.image + ")" + "no-repeat center 40%",
+                        background: `url('${select.image}') no-repeat center ${select.position}`,
                         backgroundSize: "cover"
                     }  
                     if (select.name === "sales") {
-                        return <div key={select.id} style={selection} className={select.style}>
-                            <Link to="/sales">
-                                <div className="sales-container">
-                                    <div className="sales-info">
-                                        <h1>{select.title}</h1>
-                                        <p>{select.description}</p>
-                                    </div>
+                        return <div className="page" key={select.id} style={selection} className={select.style}>
+                            <div className="sales-container">
+                                <div className="sales-info">
+                                    <h1>{select.title}</h1>
+                                    <p>{select.description}</p>
                                 </div>
-                            </Link>
+                            </div>
                         </div>
                     } else {
                         return <div key={select.id} style={selection} className={select.style}>
@@ -41,7 +40,8 @@ const BodySection = (props) => {
                         </div>
                     }
                 })
-            }   
+            }  
+            
         </div> 
     )
 }
