@@ -13,6 +13,7 @@
 
 .shop-container li {
   margin: 0;
+  pointer-events: fill;
 }
 
 .modal-container > .container {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles, Button, ButtonGroup, IconButton } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import './CheckOutItem.css';
@@ -37,7 +37,7 @@ const CheckOutItem = (props) => {
                 <div className="info-group">
                     <h1>{props.item.title}</h1>
                     <p className="item-number">items#: xxxxx</p>
-                    <p className="item-price">${(props.item.price).toFixed(2)} USD</p>
+                    <p className="item-price"><span>$</span> {(props.item.price).toFixed(2)} <span>USD</span></p>
                     <p className="item-description">Size: {props.item.size}</p>
                 </div>
                 <div className="buttons-group">

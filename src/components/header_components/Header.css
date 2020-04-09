@@ -2,8 +2,9 @@
   height: 100px;
   width: 90%;
   position: relative;
-  z-index: 2;
+  z-index: 4;
   background-color: #E5E5E5;
+  pointer-events: none;
 }
 
 .header-container section {
@@ -55,6 +56,11 @@
   display: none;
   height: 100vh;
   width: 100%;
+  pointer-events: none;
+}
+
+.header-container section .m-button-container:active {
+  background-color: #ee838f;
 }
 
 @media screen and (max-width: 980px) {
@@ -82,6 +88,7 @@
             transform: translate(-50%, 0);
     text-align: center;
     z-index: 4;
+    pointer-events: fill;
     cursor: pointer;
   }
   .header-container section .m-button-container .m-button-group a {
@@ -97,9 +104,6 @@
   }
   .header-container section .m-button-container .m-button-group .down {
     top: 20px;
-  }
-  .header-container section .m-button-container .m-button-container:active {
-    background-color: #ee838f;
   }
 }
 /*# sourceMappingURL=Header.css.map */

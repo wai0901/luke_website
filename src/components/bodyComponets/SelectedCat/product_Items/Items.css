@@ -30,12 +30,18 @@
 }
 
 .items-section .items-container .items-info h1 {
-  font-size: 1.7rem;
+  font-size: 1rem;
 }
 
 .items-section .items-container .items-info p {
-  font-size: 0.8rem;
+  font-size: 1.5rem;
+  font-weight: bold;
   line-height: 1rem;
+  margin: 5px 0 20px;
+}
+
+.items-section .items-container .items-info p span {
+  font-size: 1.2rem;
 }
 
 @media (max-width: 1366px) and (min-height: 1366px) {

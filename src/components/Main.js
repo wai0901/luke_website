@@ -17,8 +17,7 @@ import { BGIRLSECTIONLIST } from '../shared/bGirlSectionList';
 import { BBOYSECTIONLIST } from '../shared/bBoySectionList';
 import { MINISECTIONLIST } from '../shared/miniSectionList';
 import { ASSCSECTIONLIST } from '../shared/asscSectionList';
-import { WBESTSELLERSLIST } from '../shared/itemsLists/best_sellers';
-import { WLOUNGEWEAR } from '../shared/itemsLists/loungewear';
+import { PRODUCTS } from '../shared/itemsLists/products';
 import './Main.css';
 
 
@@ -41,7 +40,7 @@ const Main = () => {
     ]);
 
     //items list
-    const itemsLists = [WBESTSELLERSLIST, WLOUNGEWEAR];
+    const itemsLists = [PRODUCTS];
 
     //Shopping Cart
     const [cart, setCart] = useState([]);

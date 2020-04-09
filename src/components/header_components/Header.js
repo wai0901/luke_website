@@ -19,18 +19,26 @@ function Header(props) {
 
     const buttonUp = {
         top: "-65px",
-        // bottom: "unset",
-        transition: "all 300ms ease-in-out"
+        transition: "all 300ms ease-in-out",
+        zIndex: "2"
     }
 
     const buttonDown = {
         top: "94vh",
-        // bottom: "-60px",
-        transition: "all 300ms ease-in-out"
+        transition: "all 300ms ease-in-out",
+        zIndex: "4"
+    }
+
+    const indexUp = {
+        zIndex: "1"
+    }
+
+    const indexDown = {
+        zIndex: "8"
     }
 
     return(
-        <div className="header-container">
+        <div className="header-container"  style={menu? indexUp: indexDown}>
             <section>
                 <div className="header">
                     <div className="logo">

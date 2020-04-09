@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useHistory } from 'react-router-dom'
 import './ShoppingCart.css';
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -16,22 +17,24 @@ const useStyles = makeStyles((theme) => ({
 
 const ShoppingCart = (props) => {
 
-    const classes = useStyles()
+    const classes = useStyles();
+
+    const history = useHistory();
     
 
     const passChangeQty= (event, id) => {
         props.changeQty(event, id)
     }
-    console.log(props)
+
     return (
         <div className="cart-container">
             <div className="top-section">
                 <div className="top-container">
                     <div className="button">
-                        <Button variant="outlined" size="small" className={classes.buttonStyle}>Back</Button>
+                        <Button onClick={() => history.goBack()} variant="outlined" size="small" className={classes.buttonStyle}>Back</Button>
                     </div>
                     <div className="button total">
-                        <h1><span>$</span>{(props.total.toFixed(2))} <span>USD</span></h1>
+                        <h1><span>$</span> {(props.total.toFixed(2))} <span>USD</span></h1>
                     </div>
                     <div className="button">
                         <Button variant="outlined" size="small" className={classes.buttonStyle}>Check Out</Button>
@@ -48,6 +51,11 @@ const ShoppingCart = (props) => {
                             />)
                     }
                 </ul>
+                {props.cartItems.length === 0 && 
+                    <div className="empty-cart-message">
+                        <h2>Cart is empty</h2>
+                    </div>
+                }
             </div>
         </div>
         

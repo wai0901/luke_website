@@ -11,6 +11,7 @@
       grid-template-columns: 2fr 4fr;
   list-style: none;
   background-color: #fafafa;
+  z-index: 1;
 }
 
 .item-container .item-image {
@@ -38,6 +39,10 @@
 .item-container .item-info .info-group .item-price {
   margin: 30px 0 10px 20px;
   font-size: 1.5rem;
+}
+
+.item-container .item-info .info-group .item-price span {
+  font-size: 1.2rem;
 }
 
 .item-container .item-info .info-group .item-description {

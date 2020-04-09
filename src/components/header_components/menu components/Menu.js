@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import './Menu.css';
 
@@ -18,11 +18,13 @@ function Menu(props) {
 
     const showMenu = {
         top: "0%",
-        transition: "all 300ms ease-in-out"
+        transition: "all 300ms ease-in-out",
+        zIndex: "4"
     }
     const hideMenu = {
         top: "-100%",
-        transition: "all 300ms ease-in-out"
+        transition: "all 300ms ease-in-out",
+        zIndex: "0"
     }
 
     return(

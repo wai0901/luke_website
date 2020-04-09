@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Items.css";
 
@@ -31,7 +31,7 @@ const Items = (props) => {
               <div className="items-container">
                   <div className="items-info">
                       <h1>{select.title}</h1>
-                      <p>{select.description}</p>
+                      <p><span>$</span> {(select.price.toFixed(2))} <span>USD</span></p>
                   </div>
               </div>
             </Link>

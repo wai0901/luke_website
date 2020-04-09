@@ -18,7 +18,8 @@ const Logo = () => {
 
 const logoStyle = {
     height:'24.3034px', 
-    width: '82.4109px'
+    width: '82.4109px',
+    pointerEvents: 'fill'
 }
 
 export default Logo;

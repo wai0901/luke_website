@@ -29,6 +29,11 @@
 .cart-container .top-section .top-container .button {
   position: relative;
   top: 15px;
+  pointer-events: fill;
+}
+
+.cart-container .top-section .top-container .button h1 > span {
+  font-size: 1.2rem;
 }
 
 .cart-container .top-section .top-container .total {
@@ -47,5 +52,16 @@
   margin: 0 auto;
   padding: 0;
   list-style: none;
+}
+
+.cart-container .items-container .empty-cart-message {
+  height: 400px;
+  width: 120px;
+  margin: auto;
+}
+
+.cart-container .items-container .empty-cart-message h2 {
+  margin-top: 100px;
+  font-size: 1.2rem;
 }
 /*# sourceMappingURL=ShoppingCart.css.map */

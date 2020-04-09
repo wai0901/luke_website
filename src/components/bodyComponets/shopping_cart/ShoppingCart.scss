@@ -23,6 +23,10 @@ $bgColor: #CFCFCF;
             .button {
                 position: relative;
                 top: 15px;
+                pointer-events: fill;
+                h1 > span {
+                    font-size: 1.2rem;
+                }
             }
             .total {
                 top: -2px;
@@ -39,6 +43,15 @@ $bgColor: #CFCFCF;
             margin: 0 auto;
             padding: 0;
             list-style: none;
+        }
+        .empty-cart-message {
+            height: 400px;
+            width: 120px;
+            margin: auto;
+            h2 {
+                margin-top: 100px;
+                font-size: 1.2rem;
+            }
         }
     }
 }

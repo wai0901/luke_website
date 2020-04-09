@@ -6,8 +6,9 @@ $buttonPressed: #ee838f;
     height: 100px;
     width: 90%;
     position: relative;
-    z-index: 2;
+    z-index: 4;
     background-color: $containerColor;
+    pointer-events: none;
     section {
         height: 100px;
         width: 90%;
@@ -43,8 +44,11 @@ $buttonPressed: #ee838f;
             display: none;
             height: 100vh;
             width: 100%;
+            pointer-events: none;
         }
-
+        .m-button-container:active {
+            background-color: $buttonPressed
+        }
         @media screen and (max-width: 980px) {
             .header {
                 grid-template-columns: repeat(3, 1fr);
@@ -67,6 +71,7 @@ $buttonPressed: #ee838f;
                     transform: translate(-50%, 0);
                     text-align: center;
                     z-index: 4;
+                    pointer-events: fill;
                     cursor: pointer;
                     a {
                         position: absolute;
@@ -82,9 +87,6 @@ $buttonPressed: #ee838f;
                     .down {
                         top: 20px;
                     }
-                }
-                .m-button-container:active {
-                    background-color: $buttonPressed
                 }
             }
         }
