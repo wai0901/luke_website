@@ -18,7 +18,7 @@ export const WOMENSECTIONLIST = [
         id: "w2",
         category: "women",
         name: "loungewear",
-        image: "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623086_960_720.jpg",
+        image: "https://images.pexels.com/photos/1030895/pexels-photo-1030895.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         position: "50%",
         link: "women-loungewear",
         switch: false,

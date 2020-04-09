@@ -3,55 +3,48 @@ $black: #000;
 $bgColor: #CFCFCF;
 $containerColor: #E5E5E5;
 
-@mixin background-cover {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 @mixin margin-padding-zero {
     margin: 0;
     padding: 0;
 }
 
-@mixin height-width-100 {
-    height: 100vh;
-    width: 100%;
-}
-
 .bg {
-
-    width: 100%;
     @include margin-padding-zero;
     display: flex;
     justify-content: center;
     background: $bgColor;
     .container {
+        position: relative;
         width: 1366px;
         @include margin-padding-zero;
         display: grid;
-        grid-template-rows: 80px auto 144px;
         background-color: $containerColor;
         justify-items: center;  
-        // .shell {
-        //     position: relative;
-        //     width: 100%;
-        // }
+        .holder {
+            position: relative;
+            width: 90%;
+        }
+    }
+    .bg-shader {
+        position: fixed;
+        background-color: $containerColor;
+        height: 100vh;
+        width: 1366px;
     }
 }
-.slide-appear, .slide-enter {
+
+
+.fade-appear, .slide-enter {
     opacity: 0;
-    z-index: 1;
 }
-.slide-appear-active, .slide-enter .slide-enter-active {
+.fade-appear-active, .slide-enter .slide-enter-active {
     opacity: 1;
-    transition: opacity 300ms ease-in;
+    transition: opacity 200ms linear 150ms;
 }
-.slide-exit {
+.fade-exit {
     opacity: 1;
 }
-.slide-exit.slide-exit-active {
+.fade-exit.slide-exit-active {
     opacity: 0;
-    transition: opacity 300ms ease-out;
+    transition: opacity 200ms linear;
 }

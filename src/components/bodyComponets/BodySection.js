@@ -41,7 +41,12 @@ const BodySection = (props) => {
                     }
                 })
             }  
-            
+            <div className="iPad-prop-only">
+                <div>
+                    <h1>{props.home[0].title}</h1>
+                    <p>{props.home[0].description}</p>
+                </div>
+            </div>
         </div> 
     )
 }

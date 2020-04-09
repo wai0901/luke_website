@@ -1,20 +1,67 @@
+$hoverColor: #eb4559;
+$buttonPressed: #ee838f;
+
 @mixin margin-padding-zero {
     margin: 0;
     padding: 0;
 }
 
 .menu-container {
-    @include margin-padding-zero;
+    height: 100%;
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    list-style: none;
-    li {
-        margin: 0 12px 2px;
-        font-size: 0.8rem;
-        .menuLink {
-            text-decoration: none;
-            text-transform: uppercase;
-            color: #000;
+    justify-content: center;
+    .menu-group {
+        position: absolute;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        justify-self: center;
+        top: 0px;
+        z-index: 1;
+        li {
+            margin: 0 12px 10px;
+            font-size: 0.8rem;
+            .menuLink {
+                text-decoration: none;
+                text-transform: uppercase;
+                color: #000;
+            }
+            .menuLink:hover {
+                color: $hoverColor;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 980px) {
+    .menu-container {
+        overflow: auto;
+        position: fixed;
+        flex-direction: column;
+        background-color: #ddd;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        z-index: 4;
+        .menu-group {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            margin-top: 100px;
+            li {
+                overflow: auto;
+                position: relative;
+                margin: 40px auto 0;
+                .menuLink {
+                    font-size: 2rem;
+                }
+            }
         }
     }
 }

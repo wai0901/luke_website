@@ -10,19 +10,20 @@
 }
 
 .body-container {
-    margin: 0 auto;
-    height: 78vh;
-    width: 90%;
+    width: 100%;
     background-color: #eee;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr); 
+    grid-template-rows: auto;
     transition: 500ms ease-in-out;
-    // @include margin-padding-zero;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
 
     // Sales Route
     .sales {
-        height: 520px;
+        height: 470px;
+        width: 100%;
         grid-column: 1 / 3;
         grid-row: 1 / 3;
         .sales-container {
@@ -49,12 +50,12 @@
     } 
     // Routes selection
     .normal {
-        height: 260px;
+        height: 235px;
+        width: 100%;
         .selection-container {
             position: relative;
             height: 100%;
             overflow: hidden;
-            // cursor: pointer;
             .menu-info {
                 height: 100%;
                 width: 100%;
@@ -103,7 +104,80 @@
             }
         }
     }
-    
+    .iPad-prop-only {
+        width: 100%;
+        position: relative;
+        display: none;
+        div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            h1, p {
+                @include margin-padding-zero;
+                color: #444;
+                text-transform: uppercase;
+                line-height: 3rem;
+            }
+            h1 {
+                font-size: 3rem;
+            }
+            p {
+                font-size: 1.5rem;
+            }
+        }
+        
+    }
+}
+
+//mainly for ipad pro
+@media (max-width: 1366px) and (min-height: 1366px) {
+    .body-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        .sales {
+            height: 300px;
+            width: 100%;
+            grid-column: 1 / 4;
+            grid-row: 1 / 3;
+        }
+        .normal {
+            height: 300px;
+            width: 100%;
+        }
+        .iPad-prop-only {
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .body-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        .sales {
+            height: 300px;
+            width: 100%;
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+        .normal {
+            height: 300px;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .body-container {
+        
+        grid-template-columns: 1fr;
+        .sales {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+    }
 }
 
 

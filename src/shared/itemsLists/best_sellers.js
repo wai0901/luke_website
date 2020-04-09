@@ -1,137 +1,209 @@
 export const WBESTSELLERSLIST = [
     {
-        category: "women-best-sellers"
+        category: "women-best-sellers",
     },
     {
         id: "w-best-1",
+        main: "women",
         category: "women-best-sellers",
-        name: "INVERTED LAPEL FROCK COAT",
-        image: "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623088_960_720.jpg",
+        name: "product 1",
+        images: [
+            "https://cdn.pixabay.com/photo/2015/11/07/11/46/fashion-1031469_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2015/11/07/11/46/fashion-1031469_960_720.jpg",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        ],
         position: "50%",
-        link: "best-sellers",
-        style: "normal",
-        title: "INVERTED LAPEL FROCK COAT",
+        link: "product-1",
+        style: "items-section",
+        price: 39.90,
+        title: "product 1",
         description: "High collar frock coat with long sleeves and pronounced shoulders. Front pockets. Front snap button closure."
     },
     {
         id: "w-best-2",
+        main: "women",
         category: "women-best-sellers",
-        name: "PRINT TOP",
-        image: "https://cdn.pixabay.com/photo/2016/10/27/02/06/model-1773191_960_720.jpg",
+        name: "product 2",
+        images: [
+            "https://cdn.pixabay.com/photo/2015/11/07/11/46/fashion-1031469_960_720.jpg",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        ],
         position: "40%",
-        link: "loungewear",
-        style: "normal",
-        title: "PRINT TOP",
+        link: "product-2",
+        style: "items-section",
+        price: 79.90,
+        title: "product 2",
         description: "Top with wide neck and short sleeves. Elastic smocked fabric detail and embroidered eyelet detail. Ruffle trim."
     },
     {
         id: "w-best-3",
+        main: "women",
         category: "women-best-sellers",
-        name: "RUFFLED KNIT COAT",
-        image: "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623086_960_720.jpg",
+        name: "product 3",
+        images: [
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        ],
         position: "50%",
-        link: "blazers",
-        style: "normal",
-        title: "RUFFLED KNIT COAT",
+        link: "product-3",
+        style: "items-section",
+        price: 79.90,
+        title: "product 3",
         description: "Coat made of wool blend fabric. Round neck and long sleeves with ruffle appliqué at shoulders. Front hidden"
     },
     {
         id: "w-best-4",
+        main: "women",
         category: "women-best-sellers",
-        name: "OVERSIZED TRENCH COAT",
-        image: "https://cdn.pixabay.com/photo/2017/04/05/10/45/girl-2204623_960_720.jpg",
+        name: "product 4",
+        images: [
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        ],
         position: "50%",
-        link: "coats",
-        style: "normal",
-        title: "coats",
+        link: "product-4",
+        style: "items-section",
+        price: 59.90,
+        title: "product 4",
         description: "Full cut trench coat with lapel collar and long sleeves. Loops at cuffs and collar. Front patch pockets with flaps."
     },
     {
         id: "w-best-5",
+        main: "women",
         category: "women-best-sellers",
-        name: "dresses",
-        image: "https://cdn.pixabay.com/photo/2016/07/28/10/40/sunglasses-1547492_960_720.jpg",
+        name: "product 5",
+        images: [
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        ],
         position: "70%",
-        link: "dresses",
-        style: "normal",
-        title: "dresses",
+        link: "product-5",
+        style: "items-section",
+        price: 99.90,
+        title: "product 5",
         description: "collection"
     },
     {
         id: "w-best-6",
+        main: "women",
         category: "women-best-sellers",
-        name: "t-shirts",
-        image: "https://cdn.pixabay.com/photo/2017/04/05/10/45/girl-2204623_960_720.jpg",
+        name: "product 6",
+        images: [
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        ],
         position: "50%",
-        link: "t-shirts",
-        style: "normal",
-        title: "t-shirts",
+        link: "product-6",
+        style: "items-section",
+        price: 49.90,
+        title: "product 6",
         description: "collection"
     },
     {
         id: "w-best-7",
+        main: "women",
         category: "women-best-sellers",
-        name: "knitwear",
-        image: "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623086_960_720.jpg",
+        name: "product 7",
+        images: [
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        ],
         position: "50%",
-        link: "knitwear",
-        style: "normal",
-        title: "knitwear",
+        link: "product 7",
+        style: "items-section",
+        price: 109.90,
+        title: "product 7",
         description: "collection"
     },
     {
         id: "w-best-8",
+        main: "women",
         category: "women-best-sellers",
-        name: "pants",
-        image: "https://cdn.pixabay.com/photo/2017/04/05/10/45/girl-2204623_960_720.jpg",
+        name: "product 8",
+        images: [
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        ],
         position: "50%",
-        link: "pants",
-        style: "normal",
-        title: "pants",
+        link: "product-8",
+        style: "items-section",
+        price: 99.90,
+        title: "product 8",
         description: "collection"
     },
     {
         id: "w-best-9",
+        main: "women",
         category: "women-best-sellers",
-        name: "joggers",
-        image: "https://cdn.pixabay.com/photo/2016/08/26/20/44/elan-1623088_960_720.jpg",
+        name: "product 9",
+        images: [
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        ],
         position: "70%",
-        link: "joggers",
-        style: "normal",
-        title: "joggers",
+        link: "product-9",
+        style: "items-section",
+        price: 39.90,
+        title: "product 9",
         description: "collection"
     },
     {
         id: "w1-best-10",
+        main: "women",
         category: "women-best-sellers",
-        name: "jeans",
-        image: "https://cdn.pixabay.com/photo/2016/10/27/02/06/model-1773191_960_720.jpg",
+        name: "product 10",
+        images: [
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        ],
         position: "50%",
-        link: "jeans",
-        style: "normal",
-        title: "jeans",
+        link: "product-10",
+        style: "items-section",
+        price: 69.90,
+        title: "product 10",
         description: "collection"
     },
     {
         id: "w-best-11",
+        main: "women",
         category: "women-best-sellers",
-        name: "sweatshirt",
-        image: "https://cdn.pixabay.com/photo/2016/07/28/10/40/sunglasses-1547492_960_720.jpg",
+        name: "product 11",
+        images: [
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        ],
         position: "50%",
-        link: "sweatshirt",
-        style: "normal",
-        title: "sweatshirt",
+        link: "product-11",
+        style: "items-section",
+        price: 79.90,
+        title: "product 11",
         description: "collection"
     },
     {
         id: "w-best-12",
+        main: "women",
         category: "women-best-sellers",
-        name: "swimwear",
-        image: "https://cdn.pixabay.com/photo/2016/10/27/02/06/model-1773191_960_720.jpg",
+        name: "product 12",
+        images: [
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "https://images.pexels.com/photos/769659/pexels-photo-769659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        ],
         position: "80%",
-        link: "swimwear",
-        style: "normal",
-        title: "swimwear",
+        link: "product-12",
+        style: "items-section",
+        price: 49.90,
+        title: "product 12",
         description: "collection"
     }
 ]

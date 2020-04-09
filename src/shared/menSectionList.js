@@ -5,7 +5,7 @@ export const MENSECTIONLIST = [
     {
         id: "m1",
         name: "best sellers",
-        image: "https://cdn.pixabay.com/photo/2014/08/05/10/31/waiting-410328_960_720.jpg",
+        image: "https://images.pexels.com/photos/594610/pexels-photo-594610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         position: "50%",
         link: "best-sellers",
         switch: false,

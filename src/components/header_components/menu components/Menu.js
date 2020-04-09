@@ -1,19 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import './Menu.css';
 
-function Menu() {
+const routes = [
+    { path: '/women', class: 'menuLink', name: "women"},
+    { path: '/men', class: 'menuLink', name: "men"},
+    { path: '/girl', class: 'menuLink', name: "girl"},
+    { path: '/boy', class: 'menuLink', name: "boy"},
+    { path: '/baby-girl', class: 'menuLink', name: "baby girl"},
+    { path: '/baby-boy', class: 'menuLink', name: "baby boy"},
+    { path: '/mini', class: 'menuLink', name: "mini"},
+    { path: '/accessories', class: 'menuLink', name: "accessories"},
+]
+
+function Menu(props) {
+
+
+    const showMenu = {
+        top: "0%",
+        transition: "all 300ms ease-in-out"
+    }
+    const hideMenu = {
+        top: "-100%",
+        transition: "all 300ms ease-in-out"
+    }
+
     return(
-        <ul className="menu-container">
-            <li><Link to="/women" className="menuLink">women</Link></li>
-            <li><Link to="/men" className="menuLink">men</Link></li>
-            <li><Link to="/girl" className="menuLink">girl</Link></li>
-            <li><Link to="/boy" className="menuLink">boy</Link></li>
-            <li><Link to="/baby-girl" className="menuLink">baby girl</Link></li>
-            <li><Link to="/baby-boy" className="menuLink">baby boy</Link></li>
-            <li><Link to="/mini" className="menuLink">mini</Link></li>
-            <li><Link to="/accessories" className="menuLink">accessories</Link></li>
-        </ul>
+        <React.Fragment>
+        <div className="menu-container" style={props.menuToggle? showMenu: hideMenu}>
+            <ul className="menu-group">
+                {
+                    routes.map(route => (
+                        <li key={route.name}><Link to={route.path} className={route.class}
+                        onClick={props.linksHandler}
+                        >{route.name}</Link></li>
+                    ))
+                }
+            </ul>
+        </div>
+        </React.Fragment>
     )
 }
 

@@ -1,0 +1,45 @@
+$bgColor: #CFCFCF;
+
+.cart-container {
+    background-color: #fff;
+    width: 100%;
+    min-height: 690px;
+    .top-section {
+        position: relative;
+        height: 100px;
+        width: 100%;
+        text-align: center;
+        .top-container {
+            position: fixed;
+            width: 90%;
+            max-width: 1230px;
+            top: 100px;
+            padding-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-bottom: 1px solid $bgColor;
+            background-color: #fff;
+            z-index: 2;
+            .button {
+                position: relative;
+                top: 15px;
+            }
+            .total {
+                top: -2px;
+            }
+        }
+    }
+    .items-container {
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        ul {
+            position: relative;
+            width: 90%;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+        }
+    }
+}
+

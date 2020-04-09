@@ -1,5 +1,17 @@
 .menu-container {
-  margin: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.menu-container .menu-group {
+  position: absolute;
+  margin: 0 auto;
   padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9,16 +21,60 @@
       -ms-flex-direction: row;
           flex-direction: row;
   list-style: none;
+  justify-self: center;
+  top: 0px;
+  z-index: 1;
 }
 
-.menu-container li {
-  margin: 0 12px 2px;
+.menu-container .menu-group li {
+  margin: 0 12px 10px;
   font-size: 0.8rem;
 }
 
-.menu-container li .menuLink {
+.menu-container .menu-group li .menuLink {
   text-decoration: none;
   text-transform: uppercase;
   color: #000;
+}
+
+.menu-container .menu-group li .menuLink:hover {
+  color: #eb4559;
+}
+
+@media screen and (max-width: 980px) {
+  .menu-container {
+    overflow: auto;
+    position: fixed;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: #ddd;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 4;
+  }
+  .menu-container .menu-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+  }
+  .menu-container .menu-group li {
+    overflow: auto;
+    position: relative;
+    margin: 40px auto 0;
+  }
+  .menu-container .menu-group li .menuLink {
+    font-size: 2rem;
+  }
 }
 /*# sourceMappingURL=Menu.css.map */
