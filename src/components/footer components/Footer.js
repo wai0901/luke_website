@@ -17,9 +17,9 @@ function Footer() {
                 <li><ChatBubbleOutlineIcon style={{ fontSize: 22 }}>Filled</ChatBubbleOutlineIcon> <span>contact us</span></li>
             </ul>
             <div className="social-group">
-                <a href="#"><FacebookIcon style={{ fontSize: 22 }}>Filled</FacebookIcon></a>
-                <a href="#"><InstagramIcon style={{ fontSize: 22 }}>Filled</InstagramIcon></a>
-                <a href="#"><YouTubeIcon style={{ fontSize: 22 }}>Filled</YouTubeIcon></a>
+                <a href="/"><FacebookIcon style={{ fontSize: 22 }}>Filled</FacebookIcon></a>
+                <a href="/"><InstagramIcon style={{ fontSize: 22 }}>Filled</InstagramIcon></a>
+                <a href="/"><YouTubeIcon style={{ fontSize: 22 }}>Filled</YouTubeIcon></a>
             </div>  
             <div className="newsletter">
                 <div>

@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import { useHistory } from 'react-router-dom'
+// import {Control, LocalForm, Errors } from 'react-redux-form';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { MobileStepper, Button, InputLabel, MenuItem, FormControl, Select, Snackbar } from '@material-ui/core';
 import { KeyboardArrowLeft, KeyboardArrowRight} from '@material-ui/icons';
@@ -53,7 +55,8 @@ const ItemDetail =(props) => {
     // add to cart message
     const [open, setOpen] = useState(false);
 
-    
+    // for back button
+    const history = useHistory();
 
     //modal image section
     const handleNext = () => {
@@ -110,7 +113,7 @@ const ItemDetail =(props) => {
           {product.images.map((step, index) => (
             <div key={step.label}>
               {Math.abs(activeStep - index) <= 2 ? (
-                <img className={classes.img} style={{background: `url('${step}') no-repeat center 50% / cover`}} />
+                <img className={classes.img} style={{background: `url('${step}') no-repeat center 50% / cover`}} alt="product_image"/>
               ) : null}
             </div>
           ))}
@@ -180,7 +183,7 @@ const ItemDetail =(props) => {
                       <Button onClick={handleSubmit} variant="outlined" size="small" className={classes.buttonStyle}>Add to cart</Button>
                     </span>
                     <span>
-                      <Button variant="outlined" size="small" className={classes.buttonStyle}>Back</Button>
+                      <Button onClick={() => history.goBack()} variant="outlined" size="small" className={classes.buttonStyle}>Back</Button>
                     </span>
                 </div>        
             </form>

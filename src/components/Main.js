@@ -65,10 +65,8 @@ const Main = () => {
                 appear
                 >
                     <SelectedCat 
-                        selectedSection={sectionLists.filter(selectedList => {
-                        if (selectedList[0].category === match.params.menuId) {
-                            return selectedList
-                        }} )}
+                        selectedSection={sectionLists.filter(selectedList => 
+                            selectedList[0].category === match.params.menuId && selectedList)}
                     />
             </CSSTransition>
         )
@@ -84,11 +82,8 @@ const Main = () => {
                 appear
                 >
                     <Items 
-                        // itemsLists={findItemList(itemsLists, match.params.itemsId)}
-                        itemsLists={itemsLists.filter(item => {
-                        if (item[0].category === match.params.itemsId) {
-                            return item
-                        }} )}
+                        itemsLists={itemsLists.filter(item => 
+                            item[0].category === match.params.itemsId && item)}
                         addCart={addCart}
                     />
             </CSSTransition>
@@ -145,13 +140,13 @@ const Main = () => {
 
 
     // function for calculate total price in the cart
-    function totalPrice(objs) {
-        let num = 0;
-        let totalNums = objs.map(function(obj){
-            return num = obj.price * obj.quantity;
-        })
-        return totalNums.reduce((a, c) => a + c, 0);
-    }
+    // function totalPrice(objs) {
+    //     let num = 0;
+    //     let totalNums = objs.map(function(obj){
+    //         return num = obj.price * obj.quantity;
+    //     })
+    //     return totalNums.reduce((a, c) => a + c, 0);
+    // }
     
     // function to adjust the qty from checkout page
     const changeQty = (event, id) => 

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-
 const SelectedCat = (props) => {
 
 
@@ -15,7 +14,7 @@ const SelectedCat = (props) => {
                 background: `url('${select.image}') no-repeat center ${select.position} / cover`   
             }  
                 return <div key={select.id} style={selection} className={select.style}>
-                    <Link to={'/' + `${select.category}` + '/' + `${select.link}`}>
+                    <Link to={`${'/' + select.category + '/' + select.link}`}>
                         <div className="selection-container">
                             <div className="menu-info">
                                 <h1>{select.title}</h1>

@@ -73,19 +73,19 @@ $buttonPressed: #ee838f;
                     z-index: 4;
                     pointer-events: fill;
                     cursor: pointer;
-                    a {
+                    .menu-button {
                         position: absolute;
                         list-style: none;
-                        
+                        left: 50%;
                         transform: translate(-50%, 0);
                         font-size: 1.5rem;
                         color: #fff;
                     }
                     .up {
-                        top: 70px;
+                        top: 50px;
                     }
                     .down {
-                        top: 20px;
+                        top: -10px;
                     }
                 }
             }

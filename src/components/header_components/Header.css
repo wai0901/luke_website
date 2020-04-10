@@ -91,19 +91,20 @@
     pointer-events: fill;
     cursor: pointer;
   }
-  .header-container section .m-button-container .m-button-group a {
+  .header-container section .m-button-container .m-button-group .menu-button {
     position: absolute;
     list-style: none;
+    left: 50%;
     -webkit-transform: translate(-50%, 0);
             transform: translate(-50%, 0);
     font-size: 1.5rem;
     color: #fff;
   }
   .header-container section .m-button-container .m-button-group .up {
-    top: 70px;
+    top: 50px;
   }
   .header-container section .m-button-container .m-button-group .down {
-    top: 20px;
+    top: -10px;
   }
 }
 /*# sourceMappingURL=Header.css.map */

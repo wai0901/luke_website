@@ -56,8 +56,8 @@ function Header(props) {
                 </div>
                 <div className="m-button-container">
                     <div onClick={menuHandler} className="m-button-group" style={menu? buttonDown: buttonUp}>
-                        <a className="menu-button up">menu</a>
-                        <a className="menu-button down">close</a>
+                        <p className="menu-button up">menu</p>
+                        <p className="menu-button down">close</p>
                     </div>
                 </div>
             </section>
