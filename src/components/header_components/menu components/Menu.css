@@ -72,10 +72,22 @@
   .menu-container .menu-group li {
     overflow: auto;
     position: relative;
-    margin: 40px auto 0;
+    margin: 35px auto 0;
   }
   .menu-container .menu-group li .menuLink {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 420px) and (max-height: 750px) {
+  .menu-container .menu-group {
+    margin-top: 50px;
+  }
+  .menu-container .menu-group li {
+    margin: 30px auto 0;
+  }
+  .menu-container .menu-group li .menuLink {
+    font-size: 1.5rem;
   }
 }
 /*# sourceMappingURL=Menu.css.map */
