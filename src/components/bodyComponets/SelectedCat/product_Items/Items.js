@@ -8,7 +8,7 @@ const Items = (props) => {
 
   return ( <div className="body-container">
     {
-      props.itemsLists[0].map(select => {
+      Object.values(props.itemsLists[0]).map(select => {
         // check if the object has id, to avoid loading the "category" in the dataList
         if (select.id) {
             const selection = {
@@ -32,3 +32,4 @@ const Items = (props) => {
 }
 
 export default Items;
+

@@ -1,13 +1,19 @@
 import React, {useState} from 'react';
+import { LocalForm } from 'react-redux-form';
+import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom'
-// import {Control, LocalForm, Errors } from 'react-redux-form';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { MobileStepper, Button, InputLabel, MenuItem, FormControl, Select, Snackbar } from '@material-ui/core';
+import { MobileStepper, Button, InputLabel, MenuItem, FormControl, Select, Snackbar, Modal, Backdrop, Fade} from '@material-ui/core';
 import { KeyboardArrowLeft, KeyboardArrowRight} from '@material-ui/icons';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import MuiAlert from '@material-ui/lab/Alert';
+import { addCartItem } from '../../../../redux/ActionCreater';
 import "./ItemDetail.css";
+
+const mapDispatchToProps = {
+  addCartItem: (item, size, qty) => (addCartItem(item, size, qty))
+}
 
 //for swipe function
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -41,16 +47,29 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '140px',
     margin: theme.spacing(0.5),
   },
+  modal: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    outline: 'none',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
 }));
 
 const ItemDetail =(props) => {
-    // console.log(props)
-    const [product] = useState(props.itemsLists[0][0])
+    const [product] = useState(props.itemsLists[0])
     
     const classes = useStyles();
     const theme = useTheme();
     const [activeStep, setActiveStep] = useState(0);
     const maxSteps = product.images.length;
+
+    // add to cart warning message
+    const [modalOpen, setModalOpen] = useState(false);
 
     // add to cart message
     const [open, setOpen] = useState(false);
@@ -71,7 +90,7 @@ const ItemDetail =(props) => {
       setActiveStep(step);
     };
     
-    // modal add to cart section:
+    // add to cart
     const [size, setSize] = useState("");
     const [qty, setQty] = useState("");
 
@@ -83,23 +102,32 @@ const ItemDetail =(props) => {
       setQty(event.target.value)
     }
 
+    //add item to cart
+    //warning message
     const handleSubmit = (e) => {
-      //add item to cart
-      props.passItem(e, size, qty, product.id)
-      //added to cart message
-      setOpen(true);
+      console.log(e)
+      if (size && qty) {
+        props.addCartItem(product, size, qty);
+        
+        return setOpen(true);
+      } else {
+        setModalOpen(true);
+      } 
       e.preventDefault();
     }
+
+    const handleModalClose = () => {
+      setModalOpen(false);
+    };
     
     // Added to Cart Message (close)
-      const handleClose = (event, reason) => {
-        if (reason === 'clickaway') {
-          return;
-        }
-        setOpen(false);
-        event.preventDefault();
+      const handleClose = (reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+      setOpen(false);
     };
-
+   
   return (
     <div class="item-detail-container">
         <div className={classes.root}>
@@ -113,7 +141,7 @@ const ItemDetail =(props) => {
           {product.images.map((step, index) => (
             <div key={step.label}>
               {Math.abs(activeStep - index) <= 2 ? (
-                <img className={classes.img} style={{background: `url('${step}') no-repeat center 50% / cover`}} alt="product_image"/>
+                <img className={classes.img} style={{background: `url('${step}') no-repeat center 50% / cover`}} alt=""/>
               ) : null}
             </div>
           ))}
@@ -136,15 +164,15 @@ const ItemDetail =(props) => {
             }
           />
         </div>
-        <div className="modal-item-container">
+        <div className="add-item-container">
           <section>
             <div className="item-info">
               <h1>{product.name}</h1>
-              <p className="item-number">items#: xxxxx</p>
+              <p className="item-number">items#: {product.productId}</p>
               <p className="item-price">${(product.price).toFixed(2)} USD</p>
               <p className="item-description">{product.description}</p>
             </div>
-              <form className="buy-item-info">
+              <LocalForm className="buy-item-info">
                 <div>
                     <FormControl className={classes.formControl}>
                         <InputLabel id="size">Size:</InputLabel>
@@ -180,14 +208,33 @@ const ItemDetail =(props) => {
                 </div>
                 <div className="add-button">
                     <span>
-                      <Button onClick={handleSubmit} variant="outlined" size="small" className={classes.buttonStyle}>Add to cart</Button>
+                      <Button type="button" onClick={handleSubmit} variant="outlined" size="small" className={classes.buttonStyle}>Add to cart</Button>
                     </span>
                     <span>
                       <Button onClick={() => history.goBack()} variant="outlined" size="small" className={classes.buttonStyle}>Back</Button>
                     </span>
                 </div>        
-            </form>
+            </LocalForm>
           </section>
+          <Modal
+              aria-labelledby="transition-modal-title"
+              aria-describedby="transition-modal-description"
+              className={classes.modal}
+              open={modalOpen}
+              onClose={handleModalClose}
+              closeAfterTransition
+              BackdropComponent={Backdrop}
+              BackdropProps={{
+                timeout: 500,
+              }}
+            >
+              <Fade in={modalOpen}>
+                <div className={classes.paper}>
+                  <h2 id="transition-modal-title">Oops!</h2>
+                  <p id="transition-modal-description">Please select the size and quantity.</p>
+                </div>
+              </Fade>
+            </Modal>
             <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
                 <Alert onClose={handleClose} severity="success">
                     Added to cart!
@@ -198,4 +245,4 @@ const ItemDetail =(props) => {
   );
 }
 
-export default ItemDetail;
+export default connect(null, mapDispatchToProps)(ItemDetail);

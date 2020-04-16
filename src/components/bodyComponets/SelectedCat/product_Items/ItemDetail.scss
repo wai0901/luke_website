@@ -9,7 +9,7 @@
     grid-template-rows: repeat(1, 1fr);
     grid-template-columns: repeat(2, 1fr);
     background-color: #fff;
-    .modal-item-container {
+    .add-item-container {
         @include margin-padding-zero;
         width: 100%;
         display: flex;
@@ -51,7 +51,7 @@
     .item-detail-container {
         grid-template-rows: 1fr auto;
         grid-template-columns: repeat(1, 1fr);
-        .modal-item-container {
+        .add-item-container {
             section {
                 width: 90%;
                 grid-template-columns: 2fr;
@@ -74,7 +74,7 @@
     .item-detail-container {
         grid-template-rows: 1fr auto;
         grid-template-columns: repeat(1, 1fr);
-        .modal-item-container {
+        .add-item-container {
             section {
                 width: 90%;
                 grid-template-columns: 2fr;
