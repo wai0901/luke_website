@@ -1,6 +1,12 @@
 import * as ActionTypes from './ActionTypes';
 
-export const addCartItem = (item, size, qty) => {
+export const loading = () => {
+    return {
+        type: "LOADING"
+    }
+}
+
+export const addCartItemAsnc = (item, size, qty) => {
     let id = item.productId.concat(size) 
     
     return  {
@@ -11,6 +17,16 @@ export const addCartItem = (item, size, qty) => {
             size: size,
             quantity: qty
         }   
+    }
+}
+
+export const addCartItem = (item, size, qty) => {
+    
+    return dispach => {
+        dispach(loading())
+        setTimeout(() => {
+            dispach(addCartItemAsnc(item, size, qty));
+        }, 4000)
     }
 }
 

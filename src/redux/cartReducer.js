@@ -4,7 +4,8 @@ import * as ActionTypes from './ActionTypes';
 const cartState = {
     cartNum: 0,
     cartTotal: 0,
-    cart: []
+    cart: [],
+    loading: false
 }
 
 
@@ -30,7 +31,8 @@ export const Items = (state = cartState, action) => {
                 ...state,
                 cartNum: cartNum + action.payload.quantity,
                 cartTotal: AddedCost,
-                cart: allItems
+                cart: allItems,
+                loading: false
             }
         
         case ActionTypes.REMOVE_CARTITEM:
@@ -79,8 +81,11 @@ export const Items = (state = cartState, action) => {
                 cart: remainMinusItems
             }
 
-        case ActionTypes.GET_CARTITEM:
-            return {...state}
+        case "LOADING":
+            return {
+                ...state,
+                loading: true
+            }
             
 
         default:

@@ -62,6 +62,36 @@
   margin-top: 30px;
 }
 
+.item-detail-container .add-item-container section .buy-item-info .loading-container {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.item-detail-container .add-item-container section .buy-item-info .loading-container div {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item-detail-container .add-item-container section .buy-item-info .loading-container div .loading {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #fff;
+}
+
 @media (max-width: 1366px) and (min-height: 1366px) {
   .item-detail-container {
     -ms-grid-rows: 1fr auto;

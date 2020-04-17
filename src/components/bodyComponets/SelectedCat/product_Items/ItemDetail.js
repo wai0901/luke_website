@@ -11,6 +11,14 @@ import MuiAlert from '@material-ui/lab/Alert';
 import { addCartItem } from '../../../../redux/ActionCreater';
 import "./ItemDetail.css";
 
+const mapStateToProps = state => {
+  console.log(state)
+  return {
+    item: state,
+    loading: state.items.loading
+  }
+}
+
 const mapDispatchToProps = {
   addCartItem: (item, size, qty) => (addCartItem(item, size, qty))
 }
@@ -172,49 +180,56 @@ const ItemDetail =(props) => {
               <p className="item-price">${(product.price).toFixed(2)} USD</p>
               <p className="item-description">{product.description}</p>
             </div>
-              <LocalForm className="buy-item-info">
-                <div>
-                    <FormControl className={classes.formControl}>
-                        <InputLabel id="size">Size:</InputLabel>
-                        <Select
-                            name="size"
-                            id="size"
-                            size="small"
-                            value={size}
-                            onChange={handleSizeChange}
-                        >
-                            <MenuItem value={"s"}>S</MenuItem>
-                            <MenuItem value={"m"}>M</MenuItem>
-                            <MenuItem value={"l"}>L</MenuItem>
-                            <MenuItem value={"xl"}>XL</MenuItem>
-                        </Select>
-                    </FormControl>
-                </div>
-                <div>
-                    <FormControl className={classes.formControl}>
-                      <InputLabel id="quantity">Qty:</InputLabel>
+            <form className="buy-item-info">
+              <div>
+                  <FormControl className={classes.formControl}>
+                      <InputLabel id="size">Size:</InputLabel>
                       <Select
-                          name="quantity"
-                          id="quantity"
-                          value={qty}
-                          onChange={handleQtyChange}
+                          name="size"
+                          id="size"
+                          size="small"
+                          value={size}
+                          onChange={handleSizeChange}
                       >
-                          <MenuItem value={1}>1</MenuItem>
-                          <MenuItem value={2}>2</MenuItem>
-                          <MenuItem value={3}>3</MenuItem>
-                          <MenuItem value={4}>4</MenuItem>
+                          <MenuItem value={"s"}>S</MenuItem>
+                          <MenuItem value={"m"}>M</MenuItem>
+                          <MenuItem value={"l"}>L</MenuItem>
+                          <MenuItem value={"xl"}>XL</MenuItem>
                       </Select>
-                    </FormControl>
-                </div>
-                <div className="add-button">
-                    <span>
-                      <Button type="button" onClick={handleSubmit} variant="outlined" size="small" className={classes.buttonStyle}>Add to cart</Button>
-                    </span>
-                    <span>
-                      <Button onClick={() => history.goBack()} variant="outlined" size="small" className={classes.buttonStyle}>Back</Button>
-                    </span>
-                </div>        
-            </LocalForm>
+                  </FormControl>
+              </div>
+              <div>
+                  <FormControl className={classes.formControl}>
+                    <InputLabel id="quantity">Qty:</InputLabel>
+                    <Select
+                        name="quantity"
+                        id="quantity"
+                        value={qty}
+                        onChange={handleQtyChange}
+                    >
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                        <MenuItem value={3}>3</MenuItem>
+                        <MenuItem value={4}>4</MenuItem>
+                    </Select>
+                  </FormControl>
+              </div>
+              <div className="add-button">
+                  <span>
+                    <Button type="button" onClick={handleSubmit} variant="outlined" size="small" className={classes.buttonStyle}>Add to cart</Button>
+                  </span>
+                  <span>
+                    <Button onClick={() => history.goBack()} variant="outlined" size="small" className={classes.buttonStyle}>Back</Button>
+                  </span>
+              </div>  
+              <div className="loading-container">
+                {props.loading && 
+                  <div>
+                    <p className="loading">Loading...(Demo)</p>
+                  </div>
+                }
+              </div> 
+            </form>
           </section>
           <Modal
               aria-labelledby="transition-modal-title"
@@ -245,4 +260,4 @@ const ItemDetail =(props) => {
   );
 }
 
-export default connect(null, mapDispatchToProps)(ItemDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(ItemDetail);
