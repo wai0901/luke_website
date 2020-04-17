@@ -1,5 +1,4 @@
 import * as ActionTypes from './ActionTypes';
-// import { PRODUCTS } from '../shared/itemsLists/products';
 
 const cartState = {
     cartNum: 0,
@@ -14,18 +13,22 @@ export const Items = (state = cartState, action) => {
     let cartNum = state.cartNum;
     let cartTotal = state.cartTotal;
     let remainCarttotal = 0;
-    // console.log(cart)
+
     switch(action.type) {
         case ActionTypes.Add_CARTITEM:
+            //new item added to the cart
             let newObj = {...action.payload}
             let foundItem = findItem(cart, newObj.productId);
+            // to find the remain item
             let allItems = deleteItems(cart, newObj.productId);
+            // to check if the new item is already in the cart, if yes, just update qty.
             if (foundItem) {
                 foundItem.quantity = foundItem.quantity + newObj.quantity;
                 allItems.push(foundItem);
             } else {
                 allItems.push(newObj)
             }
+            // to get the price and add to total
             let AddedCost = round((newObj.quantity * newObj.price) + cartTotal, 2);
             return {
                 ...state,
@@ -38,12 +41,14 @@ export const Items = (state = cartState, action) => {
         case ActionTypes.REMOVE_CARTITEM:
             let removedItem = findItem(cart, action.payload);
             let remainitems = deleteItems(cart, action.payload);
+            //to remove the item total price from the cartTotal
             remainCarttotal = round(cartTotal - (removedItem.quantity * removedItem.price), 2);
             return {
                 ...state,
                 cartNum: cartNum - removedItem.quantity,
                 cartTotal: remainCarttotal,
-                cart: remainitems
+                cart: remainitems,
+                loading: false
             }
 
         case ActionTypes.INCREMENT_CARTITEM:
@@ -58,13 +63,15 @@ export const Items = (state = cartState, action) => {
                 ...state,
                 cartNum: cartNum + 1,
                 cartTotal: remainCarttotal,
-                cart: remainAddItems
+                cart: remainAddItems,
+                loading: false
             }
 
         case ActionTypes.DECREMENT_CARTITEM:
             // find the item and minus 1 to qty
             let findMinusItem = findItem(cart, action.payload);
             let remainMinusItems = ""
+            // to check if the item's qty is 1, if yes, just remove the entire item.
             if(findMinusItem.quantity < 2) {
                 cart.length < 2? remainMinusItems = []: remainMinusItems = deleteItems(cart, action.payload);
             } else {
@@ -73,20 +80,22 @@ export const Items = (state = cartState, action) => {
                 remainMinusItems = deleteItems(cart, action.payload);
                 remainMinusItems.push(findMinusItem);
             }
+            // to minus the price from the cartTotal
             remainCarttotal = round(cartTotal - findMinusItem.price, 2);
             return {
                 ...state,
                 cartNum: cartNum - 1,
                 cartTotal: remainCarttotal,
-                cart: remainMinusItems
+                cart: remainMinusItems,
+                loading: false
             }
 
+            //for loading.
         case "LOADING":
             return {
                 ...state,
                 loading: true
             }
-            
 
         default:
             return state;
@@ -100,22 +109,8 @@ const findItem = (items, inputItemId) =>
 const deleteItems = (items, inputItemId) =>
     items.filter(item => item.productId !== inputItemId && item);
 
-// const addItemTotal = (cartTotal, inputItem) => {
-//     return round((inputItem.quantity * inputItem.price) + cartTotal)
-// }
-
-const findCartTotal = (items) => {
-    let cost = items.map(item => item.quantity * item.price);
-    let total = cost.reduce((total, item) => total + item, 0);
-    return total.toFixed(2)
-}
-
 function round(value, decimals) {
     return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
   }
 
-// const priceAdjuster = (cartTotal, operator, inputItem) => {
-//     cartTotal + inputItem.price
-
-// }
 
