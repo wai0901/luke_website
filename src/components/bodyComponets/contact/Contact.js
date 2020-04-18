@@ -10,8 +10,9 @@ const isNumber = val => !isNaN(+val);
 const validEmail = val => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
 const mapStateToProps = state => {
+    console.log(state.contact)
     return {
-      loading: state.contact.loading
+      contactLoading: state.contact.contactLoading
     }
   }
 
@@ -165,7 +166,7 @@ const Contact = (props) => {
                 </div>
             </div>
             <div className="loading-container">
-                {props.loading && 
+                {props.contactLoading && 
                   <div>
                     <div class="bounceball"></div>
                     <p className="text">LOADING...(Stimulating fatch data Demo)</p>

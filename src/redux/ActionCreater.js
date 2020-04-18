@@ -5,6 +5,11 @@ export const loading = () => {
         type: "LOADING"
     }
 }
+export const contactLoading = () => {
+    return {
+        type: "CONTACTLOADING"
+    }
+}
 
 export const fetchAddCartItem = ({product, size, qty}) => async dispatch => {
 
@@ -76,7 +81,7 @@ export const fetchDecrement = (itemId) => async dispatch => {
 export const postContact = (values) => async dispatch => {
 
     try {
-        dispatch(loading())
+        dispatch(contactLoading())
         const response = await (values);
 
         //set delay to stimuate the server delay

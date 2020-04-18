@@ -2,7 +2,7 @@ import * as ActionTypes from './ActionTypes';
 
 
 const contactState = {
-    loading: false
+    contactLoading: false
 }
 
 export const ContactReducer = (state = contactState, action) => {
@@ -12,14 +12,14 @@ export const ContactReducer = (state = contactState, action) => {
             console.log(action.payload)
             return {
                 ...state,
-                loading: false
+                contactLoading: false
             }
 
         //for loading.
-        case "LOADING":
+        case "CONTACTLOADING":
             return {
                 ...state,
-                loading: true
+                contactLoading: true
             }
 
         default:
