@@ -8,9 +8,11 @@ import SelectedCat from './bodyComponets/SelectedCat/SelectedCat';
 import Items from './bodyComponets/SelectedCat/product_Items/Items';
 import ItemDetail from './bodyComponets/SelectedCat/product_Items/ItemDetail';
 import ShoppingCart from './bodyComponets/shopping_cart/ShoppingCart';
+import Help from './bodyComponets/help/Help';
+import Contact from './bodyComponets/contact/Contact';
+import { postContact } from '../redux/ActionCreater';
 import { CSSTransition } from 'react-transition-group';
 import './Main.css';
-
 
 
 const mapStateToProps = state => {
@@ -25,10 +27,14 @@ const mapStateToProps = state => {
         miniSectionList: state.state.miniSectionList,
         asscSectionList: state.state.asscSectionList,
         products: state.state.products,
-        cartItems: state.items.cart
+        cartItems: state.items.cart,
+        helpContent: state.state.helpContent
     }
 }
 
+const mapDispatchToProps = {
+    postContact: (values) => (postContact(values)),
+  };
 
 const Main = (props) => {
 
@@ -116,14 +122,16 @@ const Main = (props) => {
                     <Header />
                     <div className="holder"> 
                         <Switch>                
-                        <Route path="/" exact render={()=> {
-                            return <BodySection home={homeSelection}/>
-                        }} />
-                        <Route path="/shopping-cart" exact render={()=> {
-                            return <ShoppingCart 
-
-                            />
-                        }} />
+                        <Route path="/" exact render={()=> 
+                             <BodySection home={homeSelection}/>
+                        } />
+                        <Route path="/help" exact render={() => 
+                            <Help helpContent={props.helpContent}/>
+                        } />
+                        <Route path="/contact" exact render={() => 
+                            <Contact postContact={props.postContact}/> 
+                        }/>
+                        <Route path="/shopping-cart" exact  component={ShoppingCart} />
                         <Route path="/:menuId" exact component={RenderMenu} />
                         <Route path="/:menuId/:itemsId" exact component={RenderItems} /> 
                         <Route path="/:menuId/:itemsId/:itemId" exact component={RenderItemDetail} /> 
@@ -138,6 +146,6 @@ const Main = (props) => {
 }
 
 
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
 
 

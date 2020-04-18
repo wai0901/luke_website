@@ -2,14 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { makeStyles, Button, ButtonGroup, IconButton } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
-import { removeCartItem, increment, decrement } from '../../../redux/ActionCreater';
+import { fetchRemoveCartItem, fetchIncrement, fetchDecrement } from '../../../redux/ActionCreater';
 import './CheckOutItem.css';
 
     
     const mapDispatchToProps = {
-        removeCartItem: (itemId) => (removeCartItem(itemId)),
-        increment: (itemId) => (increment(itemId)),
-        decrement: (itemId) => (decrement(itemId))
+        fetchRemoveCartItem: (itemId) => (fetchRemoveCartItem(itemId)),
+        fetchIncrement: (itemId) => (fetchIncrement(itemId)),
+        fetchDecrement: (itemId) => (fetchDecrement(itemId))
     }
 
     const useStyles = makeStyles((theme) => ({
@@ -28,15 +28,15 @@ const CheckOutItem = (props) => {
     const classes = useStyles();
 
     const addQty = (itemId) => {
-        props.increment(itemId);
+        props.fetchIncrement(itemId);
     }
 
     const minusQty = (itemId) => {
-        props.decrement(itemId);
+        props.fetchDecrement(itemId);
     }
 
     const removeQty = (itemId) => {
-        props.removeCartItem(itemId);
+        props.fetchRemoveCartItem(itemId);
 
     }
 

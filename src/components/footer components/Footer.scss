@@ -20,17 +20,18 @@ $hoverColor: #eb4559;
             margin: 0 10px;
             font-size: 0.9rem;
             text-transform: uppercase;
-            color: $linkColor;
-            span {
-                position: relative;
-                top: -5px;
+            .link {
+                text-decoration: none;
+                color: $linkColor;
+                span {
+                    position: relative;
+                    top: -5px;
+                }
+            }
+            .link:hover {
+                color: $hoverColor;
             }
         }
-        li:hover {
-            color: $hoverColor;
-            cursor: pointer;
-        }
-
     }
     .social-group {
         width: 100%;

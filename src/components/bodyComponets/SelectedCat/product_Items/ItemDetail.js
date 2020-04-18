@@ -6,7 +6,7 @@ import { KeyboardArrowLeft, KeyboardArrowRight} from '@material-ui/icons';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import MuiAlert from '@material-ui/lab/Alert';
-import { addCartItem } from '../../../../redux/ActionCreater';
+import { fetchAddCartItem } from '../../../../redux/ActionCreater';
 import EmptyFieldMessage from './empty_field_message/EmptyFieldMessage';
 import ItemForm from './item_form/ItemForm';
 import "./ItemDetail.css";
@@ -19,7 +19,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-  addCartItem: (item, size, qty) => (addCartItem(item, size, qty))
+  fetchAddCartItem: (fetchData) => (fetchAddCartItem(fetchData))
 }
 
 //for swipe function
@@ -88,10 +88,12 @@ const ItemDetail =(props) => {
 
     //add item to cart
     //warning message
-    const handleSubmit = (e) => {
-      console.log(e)
+    const handleSubmit = e => {
+      
+      let fetchData = { product, size, qty }
+      
       if (size && qty) {
-        props.addCartItem(product, size, qty);
+        props.fetchAddCartItem(fetchData);
         
         return setOpen(true);
       } else {
@@ -100,6 +102,7 @@ const ItemDetail =(props) => {
       e.preventDefault();
     }
 
+    // set empty field warming modal close
     const handleModalClose = () => {
       setModalOpen(false);
     };

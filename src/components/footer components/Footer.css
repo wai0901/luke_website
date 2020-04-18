@@ -26,17 +26,20 @@
   margin: 0 10px;
   font-size: 0.9rem;
   text-transform: uppercase;
+}
+
+.footer-container .footer-links li .link {
+  text-decoration: none;
   color: #444;
 }
 
-.footer-container .footer-links li span {
+.footer-container .footer-links li .link span {
   position: relative;
   top: -5px;
 }
 
-.footer-container .footer-links li:hover {
+.footer-container .footer-links li .link:hover {
   color: #eb4559;
-  cursor: pointer;
 }
 
 .footer-container .social-group {

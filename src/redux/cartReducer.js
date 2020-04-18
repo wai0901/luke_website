@@ -15,7 +15,7 @@ export const Items = (state = cartState, action) => {
     let remainCarttotal = 0;
 
     switch(action.type) {
-        case ActionTypes.Add_CARTITEM:
+        case ActionTypes.FETCH_Add_CARTITEM:
             //new item added to the cart
             let newObj = {...action.payload}
             let foundItem = findItem(cart, newObj.productId);
@@ -38,7 +38,7 @@ export const Items = (state = cartState, action) => {
                 loading: false
             }
         
-        case ActionTypes.REMOVE_CARTITEM:
+        case ActionTypes.FETCH_REMOVE_CARTITEM:
             let removedItem = findItem(cart, action.payload);
             let remainitems = deleteItems(cart, action.payload);
             //to remove the item total price from the cartTotal
@@ -51,7 +51,7 @@ export const Items = (state = cartState, action) => {
                 loading: false
             }
 
-        case ActionTypes.INCREMENT_CARTITEM:
+        case ActionTypes.FETCH_INCREMENT_CARTITEM:
             // find the item and add 1 to qty
             let findAddItem = findItem(cart, action.payload);
             findAddItem.quantity = findAddItem.quantity + 1;
@@ -67,7 +67,7 @@ export const Items = (state = cartState, action) => {
                 loading: false
             }
 
-        case ActionTypes.DECREMENT_CARTITEM:
+        case ActionTypes.FETCH_DECREMENT_CARTITEM:
             // find the item and minus 1 to qty
             let findMinusItem = findItem(cart, action.payload);
             let remainMinusItems = ""

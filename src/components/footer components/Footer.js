@@ -1,11 +1,12 @@
 import React from "react";
-import './Footer.css';
+import { Link } from "react-router-dom";
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import TextField from '@material-ui/core/TextField';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
+import './Footer.css';
 
 
 function Footer() {
@@ -13,8 +14,8 @@ function Footer() {
     return(
         <div className="footer-container">
             <ul className="footer-links">
-                <li><HelpOutlineIcon style={{ fontSize: 22 }}>Filled</HelpOutlineIcon> <span>help</span></li>
-                <li><ChatBubbleOutlineIcon style={{ fontSize: 22 }}>Filled</ChatBubbleOutlineIcon> <span>contact us</span></li>
+                <li><Link to="/help" className="link"><HelpOutlineIcon style={{ fontSize: 22 }}>Filled</HelpOutlineIcon> <span>help</span></Link></li>
+                <li><Link to="/contact" className="link"><ChatBubbleOutlineIcon style={{ fontSize: 22 }}>Filled</ChatBubbleOutlineIcon> <span>contact us</span></Link></li>
             </ul>
             <div className="social-group">
                 <a href="/"><FacebookIcon style={{ fontSize: 22 }}>Filled</FacebookIcon></a>

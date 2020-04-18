@@ -8,6 +8,7 @@ import { BBOYSECTIONLIST } from '../shared/bBoySectionList';
 import { MINISECTIONLIST } from '../shared/miniSectionList';
 import { ASSCSECTIONLIST } from '../shared/asscSectionList';
 import { PRODUCTS } from '../shared/itemsLists/products';
+import { HELPCONTENT } from '../shared/helpContent';
 
 export const initialState = {
     homeMenuList: HOMEMENULIST,
@@ -19,7 +20,8 @@ export const initialState = {
     bBoySectionList: BBOYSECTIONLIST,
     miniSectionList: MINISECTIONLIST,
     asscSectionList: ASSCSECTIONLIST,
-    products: PRODUCTS
+    products: PRODUCTS,
+    helpContent: HELPCONTENT
 }
 
 export const InitialState = (state = initialState, action) => {

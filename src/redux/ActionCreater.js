@@ -6,16 +6,17 @@ export const loading = () => {
     }
 }
 
-export const addCartItem = (item, size, qty) => async dispatch => {
+export const fetchAddCartItem = ({product, size, qty}) => async dispatch => {
+
     try {
-        let id = item.productId.concat(size) 
+        let id = product.productId.concat(size) 
         dispatch(loading())
-        const response = await (item);
+        const response = await (product);
 
         //for stimulate the server delay
         setTimeout(() => {
             dispatch({
-                type: ActionTypes.Add_CARTITEM,
+                type: ActionTypes.FETCH_Add_CARTITEM,
                 payload: {
                     ...response,
                     productId: id,
@@ -29,13 +30,13 @@ export const addCartItem = (item, size, qty) => async dispatch => {
     }
 }
 
-export const removeCartItem = (itemId) => async dispatch => {
+export const fetchRemoveCartItem = (itemId) => async dispatch => {
     try {
         dispatch(loading())
         const response = await (itemId);
 
         dispatch({
-            type: ActionTypes.REMOVE_CARTITEM,
+            type: ActionTypes.FETCH_REMOVE_CARTITEM,
             payload: response
         })
     } catch (err) {
@@ -43,13 +44,13 @@ export const removeCartItem = (itemId) => async dispatch => {
     }
 };
 
-export const increment = (itemId) => async dispatch => {
+export const fetchIncrement = (itemId) => async dispatch => {
     try {
         dispatch(loading())
         const response = await (itemId);
 
         dispatch ({
-            type: ActionTypes.INCREMENT_CARTITEM,
+            type: ActionTypes.FETCH_INCREMENT_CARTITEM,
             payload: response
         })
     } catch (err) {
@@ -57,13 +58,13 @@ export const increment = (itemId) => async dispatch => {
     }
 };
 
-export const decrement = (itemId) => async dispatch => {
+export const fetchDecrement = (itemId) => async dispatch => {
     try {
         dispatch(loading())
         const response = await (itemId);
 
         dispatch ({
-            type: ActionTypes.DECREMENT_CARTITEM,
+            type: ActionTypes.FETCH_DECREMENT_CARTITEM,
             payload: response
         })
     } catch (err) {
@@ -71,4 +72,23 @@ export const decrement = (itemId) => async dispatch => {
     }
 };
 
+
+export const postContact = (values) => async dispatch => {
+
+    try {
+        dispatch(loading())
+        const response = await (values);
+
+        //set delay to stimuate the server delay
+        setTimeout(() => {
+        dispatch ({
+            type: ActionTypes.POST_CONTACT,
+            payload: response
+        })
+        }, 4000)
+
+    } catch (err) {
+        console.log('error loading data', err.toString());
+    }
+}
 
