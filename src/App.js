@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { Provider } from 'react-redux';
 import './App.css';
 import Main from "./components/Main";
@@ -13,11 +13,11 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <HashRouter>
+        <BrowserRouter>
           <div className="App">
             <Main />
           </div>
-        </HashRouter>
+        </BrowserRouter>
       </Provider>
     );
   }
