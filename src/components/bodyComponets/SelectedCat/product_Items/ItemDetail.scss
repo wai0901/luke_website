@@ -7,8 +7,6 @@ $width: 15px;
 $height: 15px;
 
 
-$bounce_height: 30px;
-
 .item-detail-container {
     position: relative;
     display: grid;
@@ -47,68 +45,6 @@ $bounce_height: 30px;
                 }
                 .add-button {
                     margin-top: 30px;
-                }
-                .loading-container {
-                    position: fixed;
-                    height: 100vh;
-                    width: 100vw;
-                    top: 0;
-                    left: 0;
-                    pointer-events: none;
-                    div {
-                        height: 300px;
-                        width: 400px;
-                        background-color: rgba(255, 255, 255, 1);
-                        box-shadow: 4px 7px 8px 1px rgba(0,0,0,0.18);
-                        display: flex;
-                        margin: 0 auto;
-                        align-self: center;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        .text {
-                            color: #444;
-                            display: inline-block;
-                            margin-left: 5px;
-                        }
-                        .bounceball {
-                            position: relative;
-                            display: inline-block;
-                            height: 37px;
-                            width: $width;
-                            background-color: rgba(0, 0, 0, 0);
-                            box-shadow: none;
-                                &:before {
-                                position: absolute;
-                                    content: '';
-                                    display: block;
-                                    top: 0;
-                                    width: $width;
-                                    height: $height;
-                                    border-radius: 50%;
-                                    background-color: #444;
-                                    transform-origin: 50%;
-                                    animation: bounce 500ms alternate infinite ease;
-                            }
-                        }
-                        @keyframes bounce {
-                            0% {
-                                top: $bounce_height;
-                                height: 5px;
-                                border-radius: 60px 60px 20px 20px;
-                                transform: scaleX(2);
-                            }
-                            35% {
-                                height: $height;
-                                border-radius: 50%;
-                                transform: scaleX(1);
-                            }
-                            100% {
-                                top: 0;
-                            }
-                        }
-
-                    }
                 }
             }
         }

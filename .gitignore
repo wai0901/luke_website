@@ -11,6 +11,9 @@
 # production
 /build
 
+# api
+/.env
+
 # misc
 .DS_Store
 .env.local
@@ -26,3 +29,5 @@ yarn-error.log*
 *.css.map
 *.sass.map
 *.scss.map
+
+

@@ -2,18 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-const SelectedCat = (props) => {
-
+const SelectedCat = ({ categoryData, handleItemsChange }) => {
+    
 
     return ( <div className="body-container">
     {
-        props.selectedSection[0].map(select => {
-            // check if the object has id, to avoid loading the "category" in the dataList
-            if (select.id) {
-                const selection = {
-                background: `url('${select.image}') no-repeat center ${select.position} / cover`   
+        categoryData.map(select => {
+            
+            const selection = {
+            background: `url('${select.image}') no-repeat center ${select.position} / cover`   
             }  
-                return <div key={select.id} style={selection} className={select.style}>
+                return <div key={select.id} 
+                            style={selection} 
+                            className={select.style}
+                            onClick={() => handleItemsChange(select.link)}
+                            >
                     <Link to={`${'/' + select.category + '/' + select.link}`}>
                         <div className="selection-container">
                             <div className="menu-info">
@@ -27,7 +30,7 @@ const SelectedCat = (props) => {
                     </Link>
                 </div>          
             }         
-        })
+        )
     }   
     </div> 
     )

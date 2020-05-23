@@ -1,16 +1,5 @@
 export const HOMEMENULIST = [
     {
-        id: "h1",
-        name: "sales",
-        image: "https://images.pexels.com/photos/2065195/pexels-photo-2065195.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        position: "50%",
-        link: "sales",
-        switch: false,
-        style: "sales",
-        title: "30% off",
-        description: "entire site"
-    },
-    {
         id: "h2",
         name: "women",
         image: "https://images.pexels.com/photos/704977/pexels-photo-704977.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",

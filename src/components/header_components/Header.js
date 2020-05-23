@@ -5,7 +5,7 @@ import ShopModule from "./shop components/ShopModule";
 import './Header.css';
 
 
-function Header(props) {
+const Header = (props) => {
 
     const [menu, setMenu] = useState(false);
 
@@ -36,7 +36,7 @@ function Header(props) {
     const indexDown = {
         zIndex: "8"
     }
-
+    
     return(
         <div className="header-container"  style={menu? indexUp: indexDown}>
             <section>
@@ -48,10 +48,11 @@ function Header(props) {
                         <Menu 
                             menuToggle={menu}
                             linksHandler={linksHandler}
+                            handleHeaderCatChange={props.handleHeaderCatChange}
                         />
                     </div>
                     <div className="shop">
-                        <ShopModule cartNum={{...props}}/>
+                        <ShopModule cartQty={props.cartQty}/>
                     </div> 
                 </div>
                 <div className="m-button-container">

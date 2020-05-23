@@ -1,31 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 import './BodySection.css';
 
-const BodySection = (props) => {
+const featureSales = {
+    background: 'url("https://images.pexels.com/photos/2065195/pexels-photo-2065195.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat center',
+    backgroundSize: "cover"
+} 
 
+
+const BodySection = ({ mainData, handleCatChange }) => {
+
+    
     return (
         <div className="body-container">
-            
+            <div className="page" className="sales" style={featureSales}>
+                <div className="sales-container">
+                    <div className="sales-info">
+                        <h1>"30% off"</h1>
+                        <p>"entire site"</p>
+                    </div>
+                </div>
+            </div>
             {
-                props.home.map(select => {
+                mainData.map(select => {
+                    
                     const selection = {
-                        background: `url('${select.image}') no-repeat center ${select.position}`,
+                        background: `url('${select.image}') no-repeat center center`,
                         backgroundSize: "cover"
                     }  
-                    if (select.name === "sales") {
-                        return <div className="page" key={select.id} style={selection} className={select.style}>
-                            <div className="sales-container">
-                                <div className="sales-info">
-                                    <h1>{select.title}</h1>
-                                    <p>{select.description}</p>
-                                </div>
-                            </div>
-                        </div>
-                    } else {
-                        return <div key={select.id} style={selection} className={select.style}>
+                        return <div key={select.id} 
+                                    style={selection} 
+                                    className={select.style}
+                                    onClick={() => handleCatChange(select.link)}
+                                    >
                             <Link to={"/" + select.link}>
                                 <div className="selection-container">
                                     <div className="menu-info">
@@ -39,15 +47,15 @@ const BodySection = (props) => {
                             </Link>
                         </div>
                     }
-                })
+                )
             }  
             <div className="iPad-prop-only">
                 <div>
-                    <h1>{props.home[0].title}</h1>
-                    <p>{props.home[0].description}</p>
+                    <h1>30% off</h1>
+                    <p>entire site</p>
                 </div>
             </div>
         </div> 
     )
 }
-export default BodySection
+export default BodySection;

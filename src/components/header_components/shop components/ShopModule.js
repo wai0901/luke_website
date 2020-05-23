@@ -1,18 +1,10 @@
 import React, { useState } from "react";
-import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import { ShoppingCartOutlined, LockOpen, Search } from '@material-ui/icons';
 import { Badge, IconButton, Modal, Backdrop, Fade } from '@material-ui/core';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import './ShopModule.css';
 
-
-// for redux to get the cart's number
-const mapStateToProps = state => {
-  return {
-    cartNumber: state.items.cartNum
-  }
-}
 
 const StyledBadge = withStyles((theme) => ({
     badge: {
@@ -37,7 +29,7 @@ const StyledBadge = withStyles((theme) => ({
     },
   }));
 
-function ShopModule(props) {
+const ShopModule = ({cartQty}) => {
     //Login
     const [user, setUser] = useState({
       userName: "",
@@ -69,7 +61,6 @@ function ShopModule(props) {
         });
       }
 
-
     return(
         <React.Fragment>
             <ul className="shop-container">
@@ -86,7 +77,7 @@ function ShopModule(props) {
                 <li>
                     <Link to={"/shopping-cart"}>
                         <IconButton aria-label="cart">
-                          <StyledBadge badgeContent={props.cartNumber} color="secondary">
+                          <StyledBadge badgeContent={cartQty} color="secondary">
                             <ShoppingCartOutlined />
                           </StyledBadge>
                         </IconButton>
@@ -133,4 +124,4 @@ function ShopModule(props) {
     )
 }
 
-export default connect(mapStateToProps)(ShopModule);
+export default ShopModule;

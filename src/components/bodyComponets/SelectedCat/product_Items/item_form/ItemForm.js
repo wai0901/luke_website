@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, InputLabel, MenuItem, FormControl, Select } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
+import ConfirmModal from './ConfirmModal';
 
 //style section
 const useStyles = makeStyles((theme) => ({
@@ -25,8 +26,19 @@ const ItemForm = (props) => {
     // for back button
     const history = useHistory();
 
+    // for Modal
+    const [open, setOpen] = React.useState(false);
 
-    return <form className="buy-item-info">
+    const handleOpen = () => {
+      setOpen(true);
+    };
+
+    const handleClose = () => {
+      setOpen(false);
+    };
+
+    return <React.Fragment>
+            <form className="buy-item-info">
                 <div>
                     <FormControl className={classes.formControl}>
                         <InputLabel id="size">Size:</InputLabel>
@@ -62,21 +74,21 @@ const ItemForm = (props) => {
                 </div>
                 <div className="add-button">
                     <span>
-                      <Button type="button" onClick={props.handleSubmit} variant="outlined" size="small" className={classes.buttonStyle}>Add to cart</Button>
+                      <Button type="button" onClick={() => handleOpen()} variant="outlined" size="small" className={classes.buttonStyle}>Add to cart</Button>
                     </span>
                     <span>
                       <Button onClick={() => history.goBack()} variant="outlined" size="small" className={classes.buttonStyle}>Back</Button>
                     </span>
                 </div>  
-                <div className="loading-container">
-                  {props.loading && 
-                    <div>
-                      <div class="bounceball"></div>
-                      <p className="text">LOADING...(Stimulating fatch data Demo)</p>
-                    </div>
-                  }
-                </div> 
             </form>
+            <ConfirmModal 
+              handleClose={handleClose}
+              open={open}
+              handleSubmit={props.handleSubmit}
+              size={props.size}
+              qty={props.qty}
+            />
+          </React.Fragment>
 }
 
 export default ItemForm;

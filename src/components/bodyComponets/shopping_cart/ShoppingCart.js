@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 
@@ -6,14 +6,13 @@ import './ShoppingCart.css';
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import CheckOutItem from './CheckOutItem';
+import { fetchCartData, updateCartItems, removeCartItems } from '../../../redux/ActionCreater';
 
 
-const mapStateToProps = state => {
-
-    return {
-        cart: state.items.cart,
-        cartTotal: state.items.cartTotal
-    }
+const mapDispatchToProps = {
+    updateCartItems: (cartItem, id) => (updateCartItems(cartItem, id)),
+    removeCartItems: (id) => (removeCartItems(id)),
+    fetchCartData
 }
 
 
@@ -26,10 +25,14 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const ShoppingCart = (props) => {
+const ShoppingCart = ({inCartItems, cartTotal, updateCartItems, removeCartItems, fetchCartData}) => {
+
+    useEffect(() => {
+        fetchCartData();
+    }, [])
 
     // sort the cart items
-    const sortedItems = props.cart.sort((a, b) => {
+    const sortedItems = inCartItems.sort((a, b) => {
         let itemA = a.productId.toUpperCase();
         let itemB = b.productId.toUpperCase();
         if (itemA < itemB) {
@@ -41,13 +44,23 @@ const ShoppingCart = (props) => {
         return 0;
     });
 
+    const changeQtyHandler = (item, id, action) => {
+        let qty = Number(item.quantity);
+
+        if (action === "plus") {
+            updateCartItems({...item, quantity: qty + 1}, id);
+        } else if (action === "minus") {
+            qty === 1 || qty === "1"?
+            removeCartItems(id):
+            updateCartItems({...item, quantity: qty - 1}, id);
+        } else if (action === "remove") {
+            removeCartItems(id);
+        }
+    }
+
     const classes = useStyles();
 
     const history = useHistory();
-
-    const passChangeQty = (event) => {
-        props.changeQty(event)
-    }
 
     return (
         <div className="cart-container">
@@ -57,7 +70,7 @@ const ShoppingCart = (props) => {
                         <Button onClick={() => history.goBack()} variant="outlined" size="small" className={classes.buttonStyle}>Back</Button>
                     </div>
                     <div className="button total">
-                        <h1><span>$</span> {(props.cartTotal).toFixed(2)} <span>USD</span></h1>
+                        <h1><span>$</span> {inCartItems ? cartTotal : "0.00"} <span>USD</span></h1>
                     </div>
                     <div className="button">
                         <Button variant="outlined" size="small" className={classes.buttonStyle}>Check Out</Button>
@@ -70,11 +83,11 @@ const ShoppingCart = (props) => {
                         sortedItems.map(item => 
                             <CheckOutItem 
                                 item={item}
-                                passChangeQty={passChangeQty}
+                                changeQtyHandler={changeQtyHandler}
                             />)
                     }
                 </ul>
-                {props.cart.length === 0 && 
+                {inCartItems.length === 0 && 
                     <div className="empty-cart-message">
                         <h2>Cart is empty</h2>
                     </div>
@@ -84,4 +97,4 @@ const ShoppingCart = (props) => {
     )
 }
 
-export default connect(mapStateToProps)(ShoppingCart);
+export default connect(null, mapDispatchToProps)(ShoppingCart);

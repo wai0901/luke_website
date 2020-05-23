@@ -1,16 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { makeStyles, Button, ButtonGroup, IconButton } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
-import { fetchRemoveCartItem, fetchIncrement, fetchDecrement } from '../../../redux/ActionCreater';
 import './CheckOutItem.css';
 
-    
-    const mapDispatchToProps = {
-        fetchRemoveCartItem: (itemId) => (fetchRemoveCartItem(itemId)),
-        fetchIncrement: (itemId) => (fetchIncrement(itemId)),
-        fetchDecrement: (itemId) => (fetchDecrement(itemId))
-    }
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -23,49 +15,35 @@ import './CheckOutItem.css';
         },
     }));
 
-const CheckOutItem = (props) => {
+const CheckOutItem = ({item, changeQtyHandler}) => {
     
     const classes = useStyles();
-
-    const addQty = (itemId) => {
-        props.fetchIncrement(itemId);
-    }
-
-    const minusQty = (itemId) => {
-        props.fetchDecrement(itemId);
-    }
-
-    const removeQty = (itemId) => {
-        props.fetchRemoveCartItem(itemId);
-
-    }
-
     
     const itemImage = {
-        background: `url('${props.item.images[0]}') no-repeat center ${props.item.position} / cover`
+        background: `url('${item.images[0]}') no-repeat center ${item.position} / cover`
     }  
 
     return <li className="item-container">
-            <div key={props.item.id} className="item-image" style={itemImage}></div>
+            <div key={item.id} className="item-image" style={itemImage}></div>
             <div className="item-info">
                 <div className="info-group">
-                    <h1>{props.item.title}</h1>
-                    <p className="item-number">item#: {props.item.productId}</p>
-                    <p className="item-price"><span>$</span> {(props.item.price).toFixed(2)} <span>USD</span></p>
-                    <p className="item-description">Size: {props.item.size}</p>
+                    <h1>{item.title}</h1>
+                    <p className="item-number">item#: {item.productId}</p>
+                    <p className="item-price"><span>$</span> {(item.price).toFixed(2)} <span>USD</span></p>
+                    <p className="item-description">Size: {item.size}</p>
                 </div>
                 <div className="buttons-group">
                     <div className="buttons">
                         <div>
-                            <p>qty: {props.item.quantity}</p>
+                            <p>qty: {item.quantity}</p>
                             <ButtonGroup size="small" aria-label="small outlined button group">
-                                <Button onClick={() => addQty(props.item.productId)}>+</Button>
-                                <Button onClick={() => minusQty(props.item.productId)}>-</Button>
+                                <Button onClick={() => changeQtyHandler(item, item._key, "plus")}>+</Button>
+                                <Button onClick={() => changeQtyHandler(item, item._key, "minus")}>-</Button>
                             </ButtonGroup>
                         </div>
                         <div>
                             <IconButton aria-label="delete" className={classes.margin}>
-                                <DeleteIcon onClick={() => removeQty(props.item.productId)} fontSize="small" />
+                                <DeleteIcon onClick={() => changeQtyHandler(item, item._key, "remove")} fontSize="small" />
                             </IconButton>
                         </div>
                     </div>
@@ -74,4 +52,4 @@ const CheckOutItem = (props) => {
         </li>
 }
 
-export default connect(null, mapDispatchToProps)(CheckOutItem);
+export default CheckOutItem;

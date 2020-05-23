@@ -10,16 +10,15 @@ const isNumber = val => !isNaN(+val);
 const validEmail = val => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
 const mapStateToProps = state => {
-    console.log(state.contact)
-    return {
-      contactLoading: state.contact.contactLoading
-    }
+    
   }
 
-const Contact = (props) => {
+const Contact = () => {
 
     const handleSubmit = (values) => {
-        props.postContact(values);
+        console.log(values)
+        alert(`Name: ${values.firstName} ${values.lastName} \nTel: ${values.phoneNum} \nEmail: ${values.email}\nMay we contact you? ${true ? 'Agree' : 'Disagree'}\nContact method: \nComment: ${values.feedback}`)
+
     }
 
     return (
@@ -165,14 +164,14 @@ const Contact = (props) => {
                     </div>    
                 </div>
             </div>
-            <div className="loading-container">
+            {/* <div className="loading-container">
                 {props.contactLoading && 
                   <div>
                     <div class="bounceball"></div>
                     <p className="text">LOADING...(Stimulating fatch data Demo)</p>
                   </div>
                 }
-            </div> 
+            </div>  */}
         </div>
     )
 }
